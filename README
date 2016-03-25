@@ -1,2 +1,0 @@
-Compile and watch es6 files
-babel -w src -d comp

@@ -29,4 +29,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-newer');
+
+  grunt.registerTask('dev', ['newer:babel', 'watch']);
 }

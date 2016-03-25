@@ -1,0 +1,6 @@
+{
+  "presets": ["es2015"],
+  "ignore": [
+    "app/assets/bower_components/*"
+  ]
+}

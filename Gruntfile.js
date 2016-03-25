@@ -11,15 +11,22 @@ module.exports = function(grunt) {
         files: [{
           "expand": true,
           "cwd": "app/",
-          "src": ["**/*.js", "!assets/js/*.js"],
+          "src": ["**/*.js", "!assets/"],
           "dest": "dist/",
           "ext": ".js"
         }]
       }
-    }
+    },
+
+    watch: {
+      es6: {
+        files: ['app/**/*.js', '!app/assets'],
+        tasks: ['newer:babel']
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-babel');
-
-  grunt.registerTask('default', ['babel']);
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-newer');
 }

@@ -17,8 +17,10 @@ class App {
 	}
 
 	init(http) {
-		http.listen(process.env.PORT, process.env.IP, function() {
-			console.log('Listening on http://' + process.env.IP + ':' + process.env.PORT);
+		let port = process.env.PORT || 9090,
+				server = process.env.IP || 'localhost';
+		http.listen(port, server, function() {
+			console.log('Listening on ' + server + ':' + port);
 		});
 	}
 }

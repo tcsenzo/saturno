@@ -4,15 +4,27 @@ class App {
 		let express = require('express'),
 				app = express(),
     		http = require('http').Server(app),
-				customRouter = new Router(app);
+    		i18n = require('i18n');
 
-		this.config(app, express);
+    this.i18nConfig(i18n);
+		this.appConfig(app, express, i18n);
+
+		new Router(app);
 		this.init(http);
 	}
 
-	config(app, express) {
+	i18nConfig(i18n) {
+		i18n.configure({
+		  locales:['en'],
+		  // todo: arrumar esse path (perde a referencia quando os arquivos compilados estao em /dist)
+		  directory: 'app/locales'
+		});
+	}
+
+	appConfig(app, express, i18n) {
 		app.set('view engine', 'jade');
     app.set('views', `${__dirname}/../app/views`);
+    app.use(i18n.init);
 		app.use('/assets', express.static(`${__dirname}/assets`));
 	}
 

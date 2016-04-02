@@ -18,16 +18,30 @@ module.exports = function(grunt) {
       }
     },
 
+    stylus: {
+      compile: {
+        files: {
+          'dist/assets/css/base.css': ['app/assets/stylus/base.styl']
+        }
+      }
+    },
+
     watch: {
       es6: {
         files: ['app/**/*.js', '!app/assets'],
         tasks: ['newer:babel']
       },
+      stylus: {
+        files: ['app/assets/stylus/**/*.styl'],
+        tasks: ['stylus']
+
+      }
     },
   });
 
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-newer');
 
   grunt.registerTask('dev', ['newer:babel', 'watch']);

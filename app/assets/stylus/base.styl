@@ -1,5 +1,6 @@
 @require 'layout/reset'
 @require 'common/variables'
+@require 'common/mixins'
 @require 'common/components'
 @require '_partials/*'
 
@@ -7,3 +8,11 @@ body
   font-family: font
 h1
   font-size: title-font-size
+a
+  text-decoration: none
+  font-weight: 900
+  color: link-color
+  display: inline-block
+  default-transition
+  &:active
+    transform: translateY(1px)

@@ -5,28 +5,34 @@
   padding: 10px
   box-sizing: border-box
   height: 60px
+  position: relative
   .logo
     font-size: 28px
     font-weight: 900
     float: left
     margin: 5px 0 0 15px
     color: main-color
+  .menu-user
+    float: right
+    margin-top: 10px
+    a
+      color: main-color
 
 .menu-toggle
   position: relative
   float: left
   height: 100%
-  width: 45px
-  padding: 5px
+  width: 40px
+  padding: 9px 5px
   box-sizing: border-box
   &:hover
     background-color: darken(header-bg-color, 20%)
     cursor: pointer
   .line
-    height: 6px
+    height: 4px
     background-color: menu-toggle-color
     margin: 5px 0
-    border-radius: 3px
+    default-border-radius()
     &:first-child
       margin-top: 0
     &:last-child

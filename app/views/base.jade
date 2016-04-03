@@ -9,16 +9,18 @@ head
 		include ./_partials/_css-head
 		
 body
+	secion.side-menu
+		block side-menu
+			include ./_partials/_side-menu
 	header.header
 		block header
-			div.menu-toggle
-				each line in [0,1,2]
-					div.line
-			div.logo
-				='Qettal'
+			include ./_partials/_header
 		
 	section.main-content
 		block main-content
 	
 	footer.footer
 		block footer
+	
+	block js-footer
+		script(src="/assets/js/main.js")

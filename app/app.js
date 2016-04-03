@@ -9,7 +9,7 @@ class App {
 		let	app = express(),
     		server = http.Server(app);
 
-    this.i18nConfig();
+		this.i18nConfig();
 		this.appConfig(app);
 		new Router(app);
 
@@ -20,7 +20,10 @@ class App {
 		i18n.configure({
 		  locales:['en'],
 		  // todo: arrumar esse path (perde a referencia quando os arquivos compilados estao em /dist)
-		  directory: 'app/locales'
+		  directory: 'app/locales',
+			api: {
+				'__': 't'
+			}
 		});
 	}
 

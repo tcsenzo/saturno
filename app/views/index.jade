@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-html(lang="en")
-head
-	meta(charset="UTF-8")
-	title Document
-	link(rel="stylesheet", href="assets/css/base.css")
-body
-	h1= __('hello')
-	a.btn(href="#")= __('hello')
+extends layout
+
+block header
+  h1= t('hello')
+
+block main-content
+  a.btn.sucess(href="#")
+    i.fa.fa-ticket
+    = t('hello')

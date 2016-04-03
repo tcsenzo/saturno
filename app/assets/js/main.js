@@ -8,6 +8,6 @@
   });
 
   closeSideMenu.addEventListener('click', function() {
-    sideMenu.style.left = '-30%';
+    sideMenu.style.left = '-32%';
   });
 }())

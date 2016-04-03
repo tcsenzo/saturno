@@ -1,5 +1,4 @@
 .side-menu
-  padding: 10px
   box-sizing: border-box
   position: absolute
   z-index: 2
@@ -7,18 +6,24 @@
   color: #fff
   width: 30%
   height: 100%
-  left: -30%
+  left: -32%
   top: 0
+  overflow: hidden
   default-transition()
+  side-box-shadow()
   a
     color: #fff
   .menu-header
     overflow: hidden
     margin-bottom: 15px
+    background-color: _grey
+    padding: 10px
+    bottom-box-shadow()
     .logo
-      color: #fff
       margin: 0
+      logo-style()
     .close
+      color: main-color
       float: right
       padding: 10px
       box-sizing: border-box
@@ -27,14 +32,16 @@
         margin-left: 10px
       &:hover
         cursor: pointer
-        background-color: lighten(main-color, 20%)
+        background-color: darken(_grey, 20%)
         default-border-radius()
-  .menu-item a
-    margin: 5px 0
-    display: block
+  .menu-body
     padding: 10px
-    default-border-radius()
-    default-transition()
-    &:hover
-      background-color: lighten(main-color, 20%)
-      padding-left: 15px
+    .menu-item a
+      margin: 5px 0
+      display: block
+      padding: 10px
+      default-border-radius()
+      default-transition()
+      &:hover
+        background-color: lighten(main-color, 20%)
+        padding-left: 15px

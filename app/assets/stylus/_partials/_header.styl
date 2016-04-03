@@ -1,0 +1,33 @@
+.header
+  display: block
+  background-color: header-bg-color
+  border-bottom: 1px solid #ccc
+  padding: 10px
+  box-sizing: border-box
+  height: 60px
+  .logo
+    font-size: 28px
+    font-weight: 900
+    float: left
+    margin: 5px 0 0 15px
+    color: main-color
+
+.menu-toggle
+  position: relative
+  float: left
+  height: 100%
+  width: 45px
+  padding: 5px
+  box-sizing: border-box
+  &:hover
+    background-color: darken(header-bg-color, 20%)
+    cursor: pointer
+  .line
+    height: 6px
+    background-color: menu-toggle-color
+    margin: 5px 0
+    border-radius: 3px
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0

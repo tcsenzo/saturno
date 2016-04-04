@@ -60,5 +60,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-newer');
 
-  grunt.registerTask('dev', ['newer:babel', 'watch']);
+  grunt.registerTask('dev', ['newer:babel', 'newer:stylus', 'watch']);
 }

@@ -20,6 +20,16 @@ module.exports = function(grunt) {
 
     stylus: {
       compile: {
+        options: {
+          use: [
+            require('jeet'),
+            require('rupture')
+          ],
+          paths: [
+            "node_modules/jeet/stylus",
+            "node_modules/rupture"
+          ]
+        },
         files: {
           'dist/assets/css/base.css': ['app/assets/stylus/base.styl']
         }

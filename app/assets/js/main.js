@@ -6,11 +6,9 @@
 
   menuToggle.addEventListener('click', function() {
     sideMenu.style.left = 0;
-    pageContainer.style.paddingLeft = '100px';
   });
 
   closeSideMenu.addEventListener('click', function() {
     sideMenu.style.left = '-310px';
-    pageContainer.style.paddingLeft = 0;
   });
 }())

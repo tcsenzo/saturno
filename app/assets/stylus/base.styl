@@ -1,8 +1,11 @@
+@import 'jeet'
 @require 'layout/reset'
 @require 'common/variables'
 @require 'common/mixins'
 @require 'common/components'
 @require '_partials/*'
+
+edit()
 
 body
   font-family: font
@@ -18,9 +21,5 @@ a
     transform: translateY(1px)
 
 .page-container
-  display: block
-  width: 960px
-  margin: 0 auto
-  background-color: _grey
-  overflow: hidden
+  center(1050px)
   default-transition()

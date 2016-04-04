@@ -12,15 +12,16 @@ body
 	secion.side-menu
 		block side-menu
 			include ./_partials/_side-menu
-	header.header
-		block header
-			include ./_partials/_header
+	section.page-wrapper
+		header.header
+			block header
+				include ./_partials/_header
+			
+		section.main-content.page-container
+			block main-content
 		
-	section.main-content
-		block main-content
-	
-	footer.footer
-		block footer
+		footer.footer
+			block footer
 	
 	block js-footer
 		script(src="/assets/js/main.js")

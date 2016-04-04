@@ -30,9 +30,15 @@ module.exports = function(grunt) {
             "node_modules/rupture"
           ]
         },
-        files: {
-          'dist/assets/css/base.css': ['app/assets/stylus/base.styl']
-        }
+        files: [
+          {
+            'expand': true,
+            'cwd': 'app/assets/stylus/pages/',
+            'src': '**/page.styl',
+            'dest': 'dist/assets/css/pages/',
+            'ext': '.css'
+          }
+        ]
       }
     },
 

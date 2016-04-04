@@ -7,7 +7,7 @@ head
 		title Qettal
 	block css
 		include ./_partials/_css-head
-		
+			
 body
 	secion.side-menu
 		block side-menu
@@ -16,8 +16,10 @@ body
 		header.header
 			block header
 				include ./_partials/_header
-			
-		section.main-content.page-container
+		
+		section.before-main-content
+			block before-main-content
+		section.main-content
 			block main-content
 		
 		footer.footer

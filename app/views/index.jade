@@ -1,6 +1,21 @@
 extends base
 
+block append css
+  link(rel="stylesheet" href="assets/css/pages/index/page.css")
+
+block before-main-content
+  div.search-container
+    = 'search'
 block main-content
-  a.btn.sucess(href="#")
-    i.fa.fa-ticket
-    = t('hello')
+  div.row.double
+    div.highlight= "highlight"
+    div.highlight= "highlight"
+  div.row.quadruple
+    div.highlight= "highlight"
+    div.highlight= "highlight"
+    div.highlight= "highlight"
+    div.highlight= "highlight"
+  div.row.triple
+    div.highlight= "highlight"
+    div.highlight= "highlight"
+    div.highlight= "highlight"

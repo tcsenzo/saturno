@@ -1,5 +1,6 @@
 'use strict';
 module.exports = function(grunt) {
+  require('load-grunt-config')(grunt);
   // todo: separar essas configs para arquivos externos
   grunt.initConfig({
     babel: {
@@ -30,30 +31,6 @@ module.exports = function(grunt) {
           "dest": "dist/assets/js/",
           "ext": ".js"
         }]
-      }
-    },
-
-    stylus: {
-      compile: {
-        options: {
-          use: [
-            require('jeet'),
-            require('rupture')
-          ],
-          paths: [
-            "node_modules/jeet/stylus",
-            "node_modules/rupture"
-          ]
-        },
-        files: [
-          {
-            'expand': true,
-            'cwd': 'app/assets/stylus/pages/',
-            'src': '**/page.styl',
-            'dest': 'dist/assets/css/pages/',
-            'ext': '.css'
-          }
-        ]
       }
     },
 

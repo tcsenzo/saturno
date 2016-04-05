@@ -27,3 +27,32 @@ a
   cf()
   default-transition()
   box-sizing: border-box
+@import 'jeet'
+@require 'common/reset'
+@require 'common/variables'
+@require 'common/mixins'
+@require 'common/components'
+@require '_partials/*'
+
+//edit()
+
+body
+  font-family: font
+h1
+  font-size: title-font-size
+a
+  text-decoration: none
+  font-weight: 900
+  color: link-color
+  display: inline-block
+  default-transition()
+  &:active
+    transform: translateY(1px)
+
+.before-main-content
+  center(100%)
+.main-content
+  center(1024px, 10px)
+  cf()
+  default-transition()
+  box-sizing: border-box

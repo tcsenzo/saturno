@@ -11,8 +11,23 @@ module.exports = function(grunt) {
         files: [{
           "expand": true,
           "cwd": "app/",
-          "src": ["**/*.js", "!assets/"],
+          "src": ["**/*.js", "!assets/**/*"],
           "dest": "dist/",
+          "ext": ".js"
+        }]
+      }
+    },
+
+    browserify: {
+      dist: {
+        options: {
+          "transform": [ ["babelify", { "presets": ["es2015"] }] ]
+        },
+        files: [{
+          "expand": true,
+          "cwd": "app/assets/js/",
+          "src": ["**/*.js"],
+          "dest": "dist/assets/js/",
           "ext": ".js"
         }]
       }
@@ -43,22 +58,27 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      es6: {
-        files: ['app/**/*.js', '!app/assets'],
+      es6Backend: {
+        files: ['app/**/*.js', '!app/assets/**/*'],
         tasks: ['newer:babel']
+      },
+      es6Frontend: {
+        files: ['app/assets/js/**/*.js'],
+        tasks: ['newer:browserify']
       },
       stylus: {
         files: ['app/assets/stylus/**/*.styl'],
-        tasks: ['stylus']
-
+        tasks: ['newer:stylus']
       }
     },
   });
 
   grunt.loadNpmTasks('grunt-babel');
+  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-newer');
 
-  grunt.registerTask('dev', ['newer:babel', 'newer:stylus', 'watch']);
+  grunt.registerTask('build', ['babel', 'stylus', 'browserify']);
+  grunt.registerTask('dev', ['newer:babel', 'newer:browserify', 'newer:stylus', 'watch']);
 }

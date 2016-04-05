@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(grunt) {
-
+  // todo: separar essas configs para arquivos externos
   grunt.initConfig({
     babel: {
       options: {

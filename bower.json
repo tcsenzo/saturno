@@ -1,18 +1,12 @@
 {
   "name": "saturno",
   "description": "",
-  "main": "index.js",
+  "directory": "app/assets/bower_components",
   "authors": [
     "Gustavo Melo <gcmelo@sp.r7.com>"
   ],
   "license": "ISC",
   "moduleType": [],
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "homepage": "https://github.com/tcsenzo/saturno",
+  "private": true
 }

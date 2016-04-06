@@ -1,8 +1,11 @@
 import Senzo from './senzo/senzo';
+import MenuScroll from './menuScroll';
 
+/* global $ */
 export default class Binds {
   constructor() {
     this.helpers = new Senzo().helpers;
+    this.bindScroll();
     this.bindClicks();
   }
   bindClicks() {
@@ -16,5 +19,9 @@ export default class Binds {
       that.helpers.hideSideMenu();
       that.helpers.hideOverlay();
     });
+  }
+  bindScroll() {
+    let menuScroll = new MenuScroll();
+    $(window).on('scroll', {'that': menuScroll}, menuScroll.bindScroll);
   }
 }

@@ -1,11 +1,14 @@
 .header
+  default-transition()
   display: block
   background-color: header-bg-color
   border-bottom: 1px solid #ccc
   padding: 10px
   box-sizing: border-box
   height: 60px
-  position: relative
+  width: 100%
+  position: absolute
+  top: 0
   .logo
     margin: 5px 0 0 15px
     logo-style()
@@ -14,6 +17,11 @@
     margin-top: 10px
     a
       color: main-color
+  &.fixed
+    position: fixed
+
+.before-main-content
+  margin-top: 60px
 
 .menu-toggle
   position: relative

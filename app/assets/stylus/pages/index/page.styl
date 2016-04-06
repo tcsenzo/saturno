@@ -1,15 +1,22 @@
 @require '../../base'
 @require './_partials/_mixins'
 
+border-dotted()
+  border: 4px dotted #ccc
+
 .search-container
   height: 300px
   col(1)
+  box-sizing: border-box
+  border-dotted()
 
 .row
   cf()
   margin-top: 10px
   .highlight
     height: 150px
+    box-sizing: border-box
+    border-dotted()
   &.double .highlight
     col(1/2)
     stack-mobile-highlight()

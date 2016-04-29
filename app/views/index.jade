@@ -3,22 +3,22 @@ extends base
 block append css
   link(rel="stylesheet" href="assets/css/pages/index/page.css")
 
-block before-main-content
+block before-container
   div.search-container
     a(href="#", class="btn")
       i.fa.fa-ticket
       = "Clica aqui"
 
-block main-content
-  div.row.double
-    div.highlight
-    div.highlight
-  div.row.quadruple
-    div.highlight
-    div.highlight
-    div.highlight
-    div.highlight
-  div.row.triple
-    div.highlight
-    div.highlight
-    div.highlight
+block container
+  div.row
+    div.col-md-6
+    div.col-md-6
+  div.row
+    div.col-md-3
+    div.col-md-3
+    div.col-md-3
+    div.col-md-3
+  div.row
+    div.col-md-4
+    div.col-md-4
+    div.col-md-4

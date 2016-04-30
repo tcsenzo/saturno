@@ -1,11 +1,8 @@
-@import 'jeet'
 @require 'common/reset'
 @require 'common/variables'
 @require 'common/mixins'
 @require 'common/components'
-@require '_partials/*'
-
-//edit()
+@require '_partials'
 
 body
   font-family: font
@@ -20,10 +17,13 @@ a
   &:active
     transform: translateY(1px)
 
+.page-wrapper
+  margin-top: 70px
+
 .before-container
-  center(100%)
+  width: 100%
+  margin: 0 auto
+
 .container
-  center(1024px, 10px)
-  cf()
   default-transition()
   box-sizing: border-box

@@ -1,8 +1,8 @@
-'use strict';
-import Router from './router';
-import express from 'express';
-import http from 'http';
-import i18n from 'i18n';
+`use strict`;
+let Router = require(`./router`),
+		express = require(`express`),
+		http = require(`http`),
+		i18n = require(`i18n`);
 
 class App {
 	constructor() {
@@ -18,9 +18,8 @@ class App {
 
 	i18nConfig() {
 		i18n.configure({
-		  locales:['en'],
-		  // todo: arrumar esse path (perde a referencia quando os arquivos compilados estao em /dist)
-		  directory: 'app/locales',
+		  locales:[`en`],
+		  directory: `locales`,
 			api: {
 				'__': 't'
 			}
@@ -28,15 +27,15 @@ class App {
 	}
 
 	appConfig(app) {
-		app.set('view engine', 'jade');
-    app.set('views', `${__dirname}/../app/views`);
+		app.set(`view engine`, `jade`);
+    app.set(`views`, `views`);
     app.use(i18n.init);
-		app.use('/assets', express.static(`${__dirname}/assets`));
+		app.use(`/assets`, express.static(`assets/dist`));
 	}
 
 	startServer(server) {
 		let port = process.env.PORT || 4000,
-				serverName = process.env.IP || 'localhost';
+				serverName = process.env.IP || `localhost`;
 
 		server.listen(port, serverName, () => console.log(`Listening on ${serverName}:${port}`));
 	}

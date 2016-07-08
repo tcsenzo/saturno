@@ -1,7 +1,9 @@
-import IndexController from './controllers/index';
+let IndexController = require('./controllers/index');
 
-export default class Router {
+class Router {
 	constructor(app) {
 		app.get('/', (req, res) => IndexController.index(res));
 	}
 }
+
+module.exports = Router;

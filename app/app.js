@@ -19,7 +19,8 @@ class App {
 	i18nConfig() {
 		i18n.configure({
 		  locales:[`en`],
-		  directory: `locales`,
+		  directory: `app/locales`,
+			objectNotation: true,
 			api: {
 				'__': 't'
 			}
@@ -28,9 +29,9 @@ class App {
 
 	appConfig(app) {
 		app.set(`view engine`, `jade`);
-    app.set(`views`, `views`);
+    app.set(`views`, `app/views`);
     app.use(i18n.init);
-		app.use(`/assets`, express.static(`assets/dist`));
+		app.use(`/assets`, express.static(`app/assets/dist`));
 	}
 
 	startServer(server) {

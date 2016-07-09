@@ -1,9 +1,10 @@
 {
-	"hello": "teste",
+	"menu": {
+		"home": "Menu 1",
+		"home2": "Menu 2",
+		"home3": "Menu 3"
+	},
 	"login": "Login",
-	"signin": "Sign-in",
-	"close": "Close",
-	"menu.home": "Home",
-	"menu.home2": "La la",
-	"menu.home3": "Le le"
+	"signin": "Sign in",
+	"close": "Close"
 }

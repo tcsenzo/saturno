@@ -1,5 +1,5 @@
 node_modules
-dist
 app/assets/bower_components
-app/assets/dist
+app/assets/dist/*
+!app/assets/dist/bootstrap
 *.log

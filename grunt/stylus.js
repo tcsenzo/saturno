@@ -3,11 +3,11 @@ module.exports = {
       options: {
         use: [
           require('rupture'),
-          require('senzo-stylus-components')
+          //require('senzo-stylus-components')
         ],
         paths: [
           "node_modules/rupture",
-          "node_modules/senzo-stylus-components"
+          //"node_modules/senzo-stylus-components"
         ]
       },
       files: [

@@ -12,6 +12,7 @@
   box-sizing: border-box
   default-transition()
   font-size: button-font-size
+  border: 0
   .fa
     margin-right: 8px
     font-size: button-icon-font-size
@@ -23,6 +24,14 @@
   &:focus
     text-decoration: none
     color: button-default-color
+    outline: none
+
+  &.primary
+    background-color: main-color
+    color: _grey
+    box-shadow: 0px 5px 0px 0px darken(main-color, 20%)
+    &.active
+      box-shadow: 0px 2px 0px 0px darken(main-color, 25%)
 
 .inline-list
   .list-item
@@ -38,3 +47,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1
   display: none
+
+form
+  input[type="text"]
+    border-radius: 1px
+    padding: 5px
+    border: 1px solid #ccc

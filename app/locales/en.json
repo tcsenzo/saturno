@@ -8,6 +8,7 @@
 	"signin": "Sign in",
 	"close": "Close",
 	"search-form": {
-		"placeholder": "Search for events, places or theaters"
+		"placeholder": "Search for events, places or theaters",
+		"button": "Search"
 	}
 }

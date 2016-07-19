@@ -32,6 +32,7 @@ class App {
     app.set(`views`, `app/views`);
     app.use(i18n.init);
 		app.use(`/assets`, express.static(`app/assets/dist`));
+		app.locals.basedir = 'app/views';
 	}
 
 	startServer(server) {

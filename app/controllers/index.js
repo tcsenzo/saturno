@@ -1,6 +1,6 @@
 class Index {
   static index(res) {
-    res.render('index');
+    res.render('index/index');
   }
 }
 

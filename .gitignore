@@ -2,4 +2,5 @@ node_modules
 app/assets/bower_components
 app/assets/dist/*
 !app/assets/dist/bootstrap
+!app/assets/dist/images
 *.log

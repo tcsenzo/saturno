@@ -7,16 +7,16 @@
   box-sizing: border-box
   height: 60px
   width: 100%
-  position: absolute
+  position: fixed
   top: 0
   .logo
-    margin: 5px 0 0 15px
+    margin: 5px 0 0 30px
     logo-style()
   .menu-user
     float: right
     margin-top: 10px
     a
-      color: main-color
+      color: header-color
   &.fixed
     position: fixed
 
@@ -24,16 +24,15 @@
   position: relative
   float: left
   height: 100%
-  width: 40px
+  width: 35px
   padding: 9px 5px
   box-sizing: border-box
   &:hover
-    background-color: darken(header-bg-color, 20%)
     cursor: pointer
   .line
-    height: 4px
+    height: 2px
     background-color: menu-toggle-color
-    margin: 5px 0
+    margin: 7px 0
     default-border-radius()
     &:first-child
       margin-top: 0

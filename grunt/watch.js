@@ -1,7 +1,7 @@
 module.exports = {
   es6Frontend: {
     files: ['app/assets/js/**/*.js'],
-    tasks: ['newer:browserify']
+    tasks: ['browserify']
   },
   stylus: {
     files: ['app/assets/stylus/**/*.styl'],

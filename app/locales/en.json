@@ -10,5 +10,8 @@
 	"search-form": {
 		"placeholder": "Search for events, places or theaters",
 		"button": "Search"
-	}
+	},
+	"eventsNext5h": "Events in the next 5h",
+	"eventsNext8h": "Events in the next 8h",
+	"eventsNext12h": "Events in the next 12h"
 }

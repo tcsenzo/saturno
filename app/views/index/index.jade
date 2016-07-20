@@ -9,24 +9,12 @@ block before-container
       include ./_partials/_search-form
 
 block container
-  div.row
-    div.col-md-6
-      div.block
-    div.col-md-6
-      div.block
-  div.row
-    div.col-md-3
-      div.block
-    div.col-md-3
-      div.block
-    div.col-md-3
-      div.block
-    div.col-md-3
-      div.block
-  div.row
-    div.col-md-4
-      div.block
-    div.col-md-4
-      div.block
-    div.col-md-4
-      div.block
+
+  each val in [5, 8, 12]
+    div.row.events-list-container
+      h2.events-list-title= t(`eventsNext${val}h`)
+      ul.events-list
+
+        each val in [1, 2, 3, 4, 5, 6]
+          div.col-md-2
+            li.event-item

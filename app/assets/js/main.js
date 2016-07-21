@@ -1,3 +1,5 @@
 import Binds from './binds';
 
-new Binds();
+$(document).ready(() => {
+  new Binds();
+});

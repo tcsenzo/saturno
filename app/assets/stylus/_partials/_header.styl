@@ -1,12 +1,12 @@
 .header
   default-transition()
   display: block
-  background-color: header-bg-color
   padding: 25px
   box-sizing: border-box
   width: 100%
   position: fixed
   top: 0
+  z-index: 10
   .logo
     margin: 5px 0 0 30px
     logo-style()
@@ -16,8 +16,11 @@
     a
       color: header-color
       font-size: 18px
-  &.fixed
-    position: fixed
+  &.background
+    background-color: main-color
+    bottom-box-shadow()
+    opacity: 0.9
+    padding: 10px 25px
 
 .menu-toggle
   position: relative

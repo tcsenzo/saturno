@@ -8,10 +8,12 @@ export default class MenuScroll {
 
     if($window.scrollTop() >= 150) {
       that.$header.addClass(`background`);
+      that.$header.find('.background-animation').css({"height": "100%"})
     }
     else {
       if($window.scrollTop() <= 50) {
         that.$header.removeClass(`background`);
+        that.$header.find('.background-animation').css({"height": "0"})
       }
     }
   }

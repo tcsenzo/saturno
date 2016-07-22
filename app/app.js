@@ -2,7 +2,8 @@
 let Router = require(`./router`),
 		express = require(`express`),
 		http = require(`http`),
-		i18n = require(`i18n`);
+		i18n = require(`i18n`),
+		morgan = require(`morgan`);
 
 class App {
 	constructor() {
@@ -28,6 +29,7 @@ class App {
 	}
 
 	appConfig(app) {
+		app.use(morgan(`dev`));
 		app.set(`view engine`, `jade`);
     app.set(`views`, `app/views`);
     app.use(i18n.init);

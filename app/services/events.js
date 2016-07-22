@@ -1,8 +1,9 @@
-let request = require(`request`);
+let request = require(`request`),
+    config = require(`../config`);
 
 class Events {
   static all(cb) {
-    request.get('http://localhost:8080/events', (error, response, body) => {
+    request.get(`${config.theaterEventsApi}/events`, (error, response, body) => {
       cb(error, response, body);
     });
   }

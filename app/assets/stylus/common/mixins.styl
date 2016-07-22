@@ -13,8 +13,17 @@ side-box-shadow()
 bottom-box-shadow()
   box-shadow: 0px 2px 2px #353535
 
+back-box-shadow()
+  box-shadow: 0 0 4px #969696
+
 logo-style()
   font-size: 28px
   font-weight: 900
   float: left
   color: header-color
+
+clearfix()
+  &:after
+    content: ''
+    display: block
+    clear: both

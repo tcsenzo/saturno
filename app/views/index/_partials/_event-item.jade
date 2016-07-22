@@ -1,6 +1,7 @@
-div.col-md-2: li.event-item
+div.col-md-2: a(href="#").event-link: li.event-item
   img(src="http://placekitten.com/g/166/94").image
   div.event-contents
     span.title #{e.name}
     span.date= helpers.dateFormat.format(e.scheduled_date, "dd/mm/yyyy, HH:MM")
+    span.old-price= helpers.numeral.real(e.price)
     span.price= helpers.numeral.real(e.price)

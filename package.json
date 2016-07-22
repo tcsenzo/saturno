@@ -26,6 +26,7 @@
     "jeet": "^6.1.2",
     "load-grunt-config": "^0.19.1",
     "load-grunt-tasks": "^3.4.1",
+    "request": "^2.73.0",
     "rupture": "^0.6.1",
     "senzo-stylus-components": "^1.0.4"
   }

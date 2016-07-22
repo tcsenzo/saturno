@@ -15,6 +15,7 @@ block container
       h2.events-list-title= t(`eventsNext${val}h`)
       ul.events-list
 
-        each val in [1, 2, 3, 4, 5, 6]
+        each e in events
           div.col-md-2
             li.event-item
+              span #{e.name}

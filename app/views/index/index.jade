@@ -16,6 +16,4 @@ block container
       ul.events-list
 
         each e in events
-          div.col-md-2
-            li.event-item
-              span #{e.name}
+          include ./_partials/_event-item 

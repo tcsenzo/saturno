@@ -35,6 +35,7 @@ class App {
     app.use(i18n.init);
 		app.use(`/assets`, express.static(`app/assets/dist`));
 		app.locals.basedir = 'app/views';
+		app.locals.helpers = require(`./helpers`);
 	}
 
 	startServer(server) {

@@ -1,0 +1,4 @@
+div.col-md-2: li.event-item
+  img(src="http://placekitten.com/g/166/94").image
+  span.title #{e.name}
+  span.date= helpers.dateFormat.brDateWithTime(e.scheduled_date)

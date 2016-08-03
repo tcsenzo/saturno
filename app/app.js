@@ -3,6 +3,7 @@ let Router = require(`./router`),
 		express = require(`express`),
 		http = require(`http`),
 		i18n = require(`i18n`),
+		_ = require(`underscore`);
 		morgan = require(`morgan`);
 
 class App {
@@ -36,6 +37,21 @@ class App {
 		app.use(`/assets`, express.static(`app/assets/dist`));
 		app.locals.basedir = 'app/views';
 		app.locals.helpers = require(`./helpers`);
+
+		app.use(function(req, res, next ) {
+	    var _render = res.render;
+	    res.render = function( view, options, fn ) {
+				let globals = {
+					viewName: view.split('/')[0]
+				}
+				options = options || {};
+        options = _.extend(options, globals);
+
+				console.log(options);
+        _render.call( this, view, options, fn );
+	    }
+	    next();
+		});
 	}
 
 	startServer(server) {

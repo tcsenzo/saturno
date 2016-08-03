@@ -5,9 +5,9 @@ module.exports = {
     },
     files: [{
       "expand": true,
-      "cwd": "app/assets/js/",
-      "src": ["**/*.js"],
-      "dest": "app/assets/dist/js/",
+      "cwd": "app/assets/js/pages/",
+      "src": ["**/main.js"],
+      "dest": "app/assets/dist/js/pages/",
       "ext": ".js"
     }]
   }

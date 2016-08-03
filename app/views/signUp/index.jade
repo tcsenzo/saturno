@@ -3,21 +3,22 @@ extends /base
 block container
   div.row: div.col-md-8.col-md-offset-2: section.signup-container
     h1.title= t('signup.signup')
-    div.row
+    div.row: div.signup-sections-container
       div.col-md-5: div.facebook-signup-container
-        h2= t('signup.socialLogin')
+        h2.subtitle= t('signup.socialLogin')
       div.col-md-7: div.form-signup-container
-        h2= t('signup.formLogin')
+        h2.subtitle= t('signup.formLogin')
         div.form-container: form(action="#" method="POST" role="form")
           div.form-group
-            label(for="name")= "Name"
-            input(type="text" name="name").form-control
+            label(for="name")= t("signup.name")
+            input(type="text" name="name" placeholder=t("signup.name")).form-control
           div.form-group
-            label(for="email")= "E-mail"
-            input(type="text" name="email").form-control
+            label(for="email")= t("signup.email")
+            input(type="text" name="email" placeholder=t("signup.email")).form-control
           div.form-group
-            label(for="password")= "Password"
-            input(type="text" name="password").form-control
-          input(type="submit" value="vai")
+            label(for="password")= t("signup.password")
+            input(type="text" name="password" placeholder=t("signup.password")).form-control
+          button(type="submit").btn.btn-default= t("signup.saveButton")
+    span.service-terms= t("signup.serviceTerms")
           
   

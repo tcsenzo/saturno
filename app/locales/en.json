@@ -13,5 +13,10 @@
 	},
 	"fiveHours": "Events in the next 5h",
 	"eightHours": "Events in the next 8h",
-	"twelveHours": "Events in the next 12h"
+	"twelveHours": "Events in the next 12h",
+	"signup": {
+		"signup": "Create a new awesome account",
+		"socialLogin": "Sign up with your social media",
+		"formLogin": "Input your data"
+	}
 }

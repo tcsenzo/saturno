@@ -2,9 +2,22 @@ extends /base
 
 block container
   div.row: div.col-md-8.col-md-offset-2: section.signup-container
-    h1= "Create a new account for free"
+    h1.title= t('signup.signup')
     div.row
-      div.col-md-6
-        span= "facebook sign up"
-      div.col-md-6
-        span= "form sign up"
+      div.col-md-5: div.facebook-signup-container
+        h2= t('signup.socialLogin')
+      div.col-md-7: div.form-signup-container
+        h2= t('signup.formLogin')
+        div.form-container: form(action="#" method="POST" role="form")
+          div.form-group
+            label(for="name")= "Name"
+            input(type="text" name="name").form-control
+          div.form-group
+            label(for="email")= "E-mail"
+            input(type="text" name="email").form-control
+          div.form-group
+            label(for="password")= "Password"
+            input(type="text" name="password").form-control
+          input(type="submit" value="vai")
+          
+  

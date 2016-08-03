@@ -15,13 +15,13 @@
 	"eightHours": "Events in the next 8h",
 	"twelveHours": "Events in the next 12h",
 	"signup": {
-		"signup": "Create a new awesome account",
+		"signup": "Create your new awesome account",
 		"socialLogin": "Sign up with your social media",
 		"formLogin": "Input your data",
 		"name": "Name",
 		"email": "E-mail",
 		"password": "Password",
 		"saveButton": "Sign up!",
-		"serviceTerms": "By sign up with us, you agree with our <a href="#">Terms of Service</a>"
+		"serviceTerms": "By sign up with us, you agree with our <a href='#'>Terms of Service</a>"
 	}
 }

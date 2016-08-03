@@ -19,6 +19,7 @@ block container
             label(for="password")= t("signup.password")
             input(type="text" name="password" placeholder=t("signup.password")).form-control
           button(type="submit").btn.btn-default= t("signup.saveButton")
-    span.service-terms= t("signup.serviceTerms")
+    //- html safe
+    div.service-terms: span !{t("signup.serviceTerms")}
           
   

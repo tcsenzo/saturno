@@ -1,6 +1,7 @@
-export default class MenuScroll {
+class MenuScroll {
   constructor() {
     this.$header = $(`.header`);
+    $(document).on('scroll', {'that': this}, this.bindScroll);
   }
   bindScroll(e) {
     let $window = $(window),
@@ -18,3 +19,5 @@ export default class MenuScroll {
     }
   }
 }
+
+export default new MenuScroll();

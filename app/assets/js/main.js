@@ -1,5 +1,15 @@
-import Binds from './binds';
+import sideMenu from './sideMenu';
 
-$(document).ready(() => {
-  new Binds();
-});
+class Main {
+  constructor() {
+    this.documentReady();
+  }
+
+  documentReady() {
+    $(document).ready(() => {
+      new sideMenu();
+    });
+  }
+}
+
+export default new Main();

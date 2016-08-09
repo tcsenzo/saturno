@@ -3,8 +3,9 @@ let Router = require(`./router`),
 		express = require(`express`),
 		http = require(`http`),
 		i18n = require(`i18n`),
-		_ = require(`underscore`);
-		morgan = require(`morgan`);
+		_ = require(`underscore`),
+		morgan = require(`morgan`),
+		bodyParser = require(`body-parser`)
 
 class App {
 	constructor() {
@@ -23,6 +24,7 @@ class App {
 		  locales:[`en`],
 		  directory: `app/locales`,
 			objectNotation: true,
+			updateFiles: false,
 			api: {
 				'__': 't'
 			}
@@ -37,6 +39,11 @@ class App {
 		app.use(`/assets`, express.static(`app/assets/dist`));
 		app.locals.basedir = 'app/views';
 		app.locals.helpers = require(`./helpers`);
+
+		app.use(bodyParser.json());
+		app.use(bodyParser.urlencoded({
+		  extended: true
+		}));
 
 		app.use(function(req, res, next ) {
 	    var _render = res.render;

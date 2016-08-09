@@ -8,7 +8,7 @@ block container
         h2.subtitle= t('signup.socialLogin')
       div.col-md-7: div.form-signup-container
         h2.subtitle= t('signup.formLogin')
-        div.form-container: form(action="#" method="POST" role="form")
+        div.form-container: form(action="/user/create" method="POST" role="form")
           div.form-group
             label(for="name")= t("signup.name")
             input(type="text" name="name" placeholder=t("signup.name")).form-control

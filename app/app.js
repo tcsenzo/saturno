@@ -24,6 +24,7 @@ class App {
 		  locales:[`en`],
 		  directory: `app/locales`,
 			objectNotation: true,
+			updateFiles: false,
 			api: {
 				'__': 't'
 			}

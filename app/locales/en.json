@@ -22,6 +22,10 @@
 		"email": "E-mail",
 		"password": "Password",
 		"saveButton": "Sign up!",
-		"serviceTerms": "By sign up with us, you agree with our <a href='#'>Terms of Service</a>"
+		"serviceTerms": "By sign up with us, you agree with our <a href='#'>Terms of Service</a>",
+		"message": {
+			"title": "Success!",
+			"content": "User created successfully."
+		}
 	}
 }

@@ -1,3 +1,5 @@
+let services = require('../services');
+
 class SignUpController {
 
   index(res) {
@@ -5,8 +7,17 @@ class SignUpController {
   }
 
   create(req, res) {
-    console.log(req.body);
-    //res.render("index/index");
+    services.users.create(req.body, (error, response, body) => {
+      if(response.statusCode === 201 && !error) {
+        res.render('signUp/index', {
+          'alert': {
+            'type': 'success',
+            'title': req.t('signup.message.title'),
+            'content': req.t('signup.message.content')
+          }
+        })
+      }
+    });
   }
 
 }

@@ -4,15 +4,14 @@ div.menu-toggle
 div.logo
   ='Qettal'
 nav.menu-user
-  if session.authorizedUser
-    ul.inline-list
+  ul.inline-list
+    if session.authorizedUser
       li.list-item
         a(href="#") #{session.authorizedUser.name}
       li.list-item
         form(method="POST" action="/logout")
-          button(type="submit")= t("header.logout")
-  else
-    ul.inline-list
+          button(type="submit").logout-button= t("header.logout")
+    else
       li.list-item
         a(href="/login")= t('header.login')
       li.list-item

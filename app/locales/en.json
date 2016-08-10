@@ -7,7 +7,8 @@
 	},
 	"header": {
 		"login": "Login",
-		"signin": "Sign in"
+		"signin": "Sign in",
+		"logout": "Logout"
 	},
 	"search-form": {
 		"placeholder": "Search for events, places or theaters",

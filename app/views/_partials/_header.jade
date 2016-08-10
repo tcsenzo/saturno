@@ -4,9 +4,17 @@ div.menu-toggle
 div.logo
   ='Qettal'
 nav.menu-user
-  ul.inline-list
-    li.list-item
-      a(href="#")= t('header.login')
-    li.list-item
-      a(href="#")= t('header.signin')
+  if session.authorizedUser
+    ul.inline-list
+      li.list-item
+        a(href="#") #{session.authorizedUser.name}
+      li.list-item
+        form(method="POST" action="/logout")
+          button(type="submit")= t("header.logout")
+  else
+    ul.inline-list
+      li.list-item
+        a(href="/login")= t('header.login')
+      li.list-item
+        a(href="/cadastro")= t('header.signin')
 div.background-animation

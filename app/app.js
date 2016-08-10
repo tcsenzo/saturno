@@ -5,7 +5,8 @@ let Router = require(`./router`),
 		i18n = require(`i18n`),
 		_ = require(`underscore`),
 		morgan = require(`morgan`),
-		bodyParser = require(`body-parser`)
+		bodyParser = require(`body-parser`),
+		session = require(`express-session`);
 
 class App {
 	constructor() {
@@ -45,16 +46,22 @@ class App {
 		  extended: true
 		}));
 
+		app.use(session({
+			secret: 'qettal',
+			resave: false,
+  		saveUninitialized: true
+		}));
+
 		app.use(function(req, res, next ) {
 	    var _render = res.render;
 	    res.render = function( view, options, fn ) {
 				let globals = {
-					viewName: view.split('/')[0]
+					viewName: view.split('/')[0],
+					session: req.session
 				}
 				options = options || {};
         options = _.extend(options, globals);
 
-				console.log(options);
         _render.call( this, view, options, fn );
 	    }
 	    next();

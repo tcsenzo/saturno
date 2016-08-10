@@ -12,10 +12,7 @@ class Router {
 		app.post('/login', (req, res) => controllers.loginController.login(req, res));
 		app.post('/logout', (req, res) => controllers.loginController.logout(req, res));
 
-		app.get('/perfil', helpers.auth.authorize, (req, res, next) => {
-			res.redirect('/agora-foi');
-			//controllers.loginController.index(res)
-		});
+		app.get('/perfil', helpers.auth.authorize, (req, res, next) => controllers.profileController.index(req, res));
 	}
 }
 

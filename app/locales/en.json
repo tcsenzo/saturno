@@ -42,5 +42,8 @@
 			"title": "Invalid data!",
 			"content": "This email or password are invalid."
 		}
+	},
+	"profile": {
+		"profile": "Welcome to your profile"
 	}
 }

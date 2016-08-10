@@ -1,0 +1,9 @@
+extends /base
+
+block container
+  div.row: div.col-md-8.col-md-offset-2: section.login-container
+    if alert
+      include /shared/alert
+      
+    h1.title= t('profile.profile')
+    div.row: div.login-sections-container

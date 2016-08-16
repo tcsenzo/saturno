@@ -5,9 +5,9 @@ div.logo
   ='Qettal'
 nav.menu-user
   ul.inline-list
-    if session.authorizedUser
+    if loggedUser
       li.list-item
-        a(href="/perfil") #{session.authorizedUser.name}
+        a(href="/perfil")= "Nome do rapaz"
       li.list-item
         form(method="POST" action="/logout")
           button(type="submit").logout-button= t("header.logout")

@@ -7,7 +7,8 @@ let Router = require(`./router`),
 		morgan = require(`morgan`),
 		bodyParser = require(`body-parser`),
 		session = require(`express-session`),
-		cookieParser = require(`cookie-parser`);
+		cookieParser = require(`cookie-parser`),
+		cookie = require('cookie');
 
 class App {
 	constructor() {
@@ -56,11 +57,14 @@ class App {
 
 		app.use(function(req, res, next ) {
 	    var _render = res.render;
-	    res.render = function( view, options, fn ) {
-				let globals = {
-					viewName: view.split('/')[0],
-					session: req.session
-				}
+	    res.render = function(view, options, fn) {
+				let reqCookie = cookie.parse(req.headers.cookie),
+						globals = {
+							viewName: view.split('/')[0],
+							session: req.session,
+							loggedUser: (reqCookie.JSESSIONID ? true : false)
+						};
+
 				options = options || {};
         options = _.extend(options, globals);
 

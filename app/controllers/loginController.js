@@ -11,7 +11,7 @@ class LoginController {
     services.login.login(req.body, (apiError, apiRes, apiBody) => {
       if(apiRes.statusCode === 200) {
         res.append('set-cookie', apiRes.headers['set-cookie'][0]);
-        res.redirect('/');
+        res.redirect('/perfil');
       }
       else {
         res.render('login/index', {
@@ -26,7 +26,7 @@ class LoginController {
   }
 
   logout(req, res) {
-    req.session.authorizedUser = false;
+    res.clearCookie('JSESSIONID');
     res.redirect('/');
   }
 }

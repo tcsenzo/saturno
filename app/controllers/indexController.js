@@ -12,17 +12,17 @@ class Index {
       that.doRender(res, filters);
     });
 
-    services.events.all((error, response, body) => {
+    services.event.all((error, response, body) => {
       filters.fiveHours = JSON.parse(body).events;
       finished();
     });
 
-    services.events.all((error, response, body) => {
+    services.event.all((error, response, body) => {
       filters.eightHours = JSON.parse(body).events;
       finished();
     });
 
-    services.events.all((error, response, body) => {
+    services.event.all((error, response, body) => {
       filters.twelveHours = JSON.parse(body).events;
       finished();
     });

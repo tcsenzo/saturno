@@ -6,7 +6,8 @@ let Router = require(`./router`),
 		_ = require(`underscore`),
 		morgan = require(`morgan`),
 		bodyParser = require(`body-parser`),
-		session = require(`express-session`);
+		session = require(`express-session`),
+		cookieParser = require(`cookie-parser`);
 
 class App {
 	constructor() {
@@ -38,6 +39,7 @@ class App {
     app.set(`views`, `app/views`);
     app.use(i18n.init);
 		app.use(`/assets`, express.static(`app/assets/dist`));
+		app.use(cookieParser());
 		app.locals.basedir = 'app/views';
 		app.locals.helpers = require(`./helpers`);
 

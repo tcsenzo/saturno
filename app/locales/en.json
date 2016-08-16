@@ -40,7 +40,7 @@
 		"saveButton": "Login!",
 		"message": {
 			"title": "Invalid data!",
-			"content": "This email or password are invalid."
+			"content": "The email or password are invalid."
 		}
 	},
 	"profile": {

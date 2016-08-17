@@ -1,4 +1,6 @@
-let services = require('../services');
+let services = require('../services'),
+    helpers = require('../helpers'),
+    config = require(`../config`);
 
 class SignUpController {
 
@@ -7,15 +9,22 @@ class SignUpController {
   }
 
   create(req, res) {
-    services.users.create(req.body, (error, response, body) => {
-      if(response.statusCode === 201 && !error) {
-        res.render('signUp/index', {
-          'alert': {
-            'type': 'success',
-            'title': req.t('signup.message.title'),
-            'content': req.t('signup.message.content')
-          }
-        })
+    helpers.requestMid.request({
+      url: `${config.theaterEventsApi}/users`,
+      method: 'POST',
+      jsonParams: req.body,
+      req: req,
+      res: res,
+      cb: (apiError, apiRes, apiBody) => {
+        if(apiRes.statusCode === 201) {
+          res.render('signUp/index', {
+            'alert': {
+              'type': 'success',
+              'title': req.t('signup.message.title'),
+              'content': req.t('signup.message.content')
+            }
+          });
+        }
       }
     });
   }

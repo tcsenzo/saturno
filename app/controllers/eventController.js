@@ -1,11 +1,19 @@
-let services = require('../services');
+let services = require('../services'),
+    config = require('../config'),
+    helpers = require('../helpers');
 
 class EventController {
 
   show(req, res) {
-    services.event.getById(1, (apiError, apiResp, apiBody) => {
-      if(apiResp.statusCode === 200) {
-        res.render("event/show", {'event': JSON.parse(apiBody)});
+    helpers.requestMid.request({
+      req: req,
+      res: res,
+      url: `${config.theaterEventsApi}/events/${req.params.id}`,
+      method: 'GET',
+      cb: (apiError, apiRes, apiBody) => {
+        if(apiRes.statusCode === 200) {
+          res.render("event/show", {'event': JSON.parse(apiBody)});
+        }
       }
     });
   }

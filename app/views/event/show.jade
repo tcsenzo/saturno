@@ -3,5 +3,35 @@ extends /base
 block container
   if alert
     include /shared/alert
-  img(src="http://placekitten.com/g/166/94").image
-  h1 #{event.name}
+  div.row
+    div.col-md-5: div.event-image
+      img(src="http://placekitten.com/g/450/300").image
+    div.col-md-7
+      h1.title.event-name #{event.name}
+      div.event-price-container
+        div: span.old-price= t('event.from') + helpers.numeral.real(event.price)
+        div: span.price= t('event.to') + helpers.numeral.real(event.price)
+        form(action="#")
+          div.special-ticket
+            div.checkbox
+              label
+                input(type="checkbox" name="specialTicket")
+                | #{t("event.specialTicket")}
+          div.buy-ticket-container
+            button(type="submit").btn.btn-default 
+              i.fa.fa-shopping-cart
+              | #{t('event.buy')}
+      div.event-detail-container
+        span.detail.event-date= helpers.dateFormat.format(event.scheduled_date, 'dd/mm/yyyy, HH:MM')
+        h2.detail.theater-name #{event.theater.name}
+        h2.detail.theater-address 
+          a(href="#")
+            | #{event.theater.address.street + ', ' + event.theater.address.number}
+            i.fa.fa-map-marker.map-icon
+  div.row
+    div.col-md-12
+      div.event-description-container
+        div.description-title= t('event.description')
+        div.description: p #{event.description}
+        
+      

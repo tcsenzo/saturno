@@ -45,5 +45,12 @@
 	},
 	"profile": {
 		"profile": "Welcome to your profile"
+	},
+	"event": {
+		"description": "Description",
+		"from": "form: ",
+		"to": "to: ",
+		"specialTicket": "Half price",
+		"buy": "BUY"
 	}
 }

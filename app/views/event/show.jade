@@ -11,16 +11,21 @@ block container
       div.event-price-container
         div: span.old-price= t('event.from') + helpers.numeral.real(event.price)
         div: span.price= t('event.to') + helpers.numeral.real(event.price)
-        form(action="#")
-          div.special-ticket
-            div.checkbox
-              label
-                input(type="checkbox" name="specialTicket")
-                | #{t("event.specialTicket")}
-          div.buy-ticket-container
-            button(type="submit").btn.btn-default 
-              i.fa.fa-shopping-cart
-              | #{t('event.buy')}
+        form(action="#").buy-ticket-form.form-horizontal
+          div.form-group
+            div.buy-ticket-container.col-md-12
+              button(type="submit").btn.btn-default.btn-buy
+                i.fa.fa-shopping-cart
+                | #{t('event.buy')}
+          div.form-group
+            div.special-ticket.col-md-4
+              label(for="ticketType")= t('event.ticketType')
+              select(name="ticketType").form-control.special-ticket-field
+                each option, i in config.specialTicketOptions
+                  option(value=i) #{option}
+            div.special-ticket.col-md-2
+              label(for="ticketAmount")= t('event.ticketAmount')
+              input(type="text" name="ticketAmount").form-control
       div.event-detail-container
         span.detail.event-date= helpers.dateFormat.format(event.scheduled_date, 'dd/mm/yyyy, HH:MM')
         h2.detail.theater-name #{event.theater.name}

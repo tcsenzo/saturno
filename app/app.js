@@ -8,7 +8,8 @@ let Router = require(`./router`),
 		bodyParser = require(`body-parser`),
 		session = require(`express-session`),
 		cookieParser = require(`cookie-parser`),
-		cookie = require('cookie');
+		cookie = require('cookie'),
+		config = require('./config.js');
 
 class App {
 	constructor() {
@@ -62,7 +63,8 @@ class App {
 						globals = {
 							viewName: view.split('/')[0],
 							session: req.session,
-							loggedUser: (reqCookie.JSESSIONID ? true : false)
+							loggedUser: (reqCookie.JSESSIONID ? true : false),
+							config: config
 						};
 
 				options = options || {};

@@ -59,7 +59,7 @@ class App {
 		app.use(function(req, res, next ) {
 	    var _render = res.render;
 	    res.render = function(view, options, fn) {
-				let reqCookie = cookie.parse(req.headers.cookie),
+				let reqCookie = cookie.parse(req.headers.cookie || ''),
 						globals = {
 							viewName: view.split('/')[0],
 							session: req.session,

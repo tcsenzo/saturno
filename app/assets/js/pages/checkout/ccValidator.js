@@ -25,9 +25,8 @@ class CcValidator {
 
     debugger
     if(cc.isValid()){
-      console.log('valido', cc.hash());
       that.ccFields.hash.val(cc.hash());
-      //$(this).submit();
+      $(this).submit();
     }
     else {
       alert('Cartão de crédito inválido');

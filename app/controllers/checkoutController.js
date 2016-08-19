@@ -1,3 +1,6 @@
+let helpers = require('../helpers'),
+    config = require('../config');
+
 class CheckoutController {
   index(req, res) {
     let ticketSum = {},
@@ -15,7 +18,7 @@ class CheckoutController {
     }
 
     // organiza os itens no checkoutJSON
-    for (const key in ticketSum) {
+    for(const key in ticketSum) {
       let ticketPrice = parseFloat(checkoutJSON.event.price),
           unitPrice = key === 'FULL' ? ticketPrice : ticketPrice/2,
           ticketType = key,
@@ -37,7 +40,36 @@ class CheckoutController {
   }
 
   payment(req, res) {
-    console.log(req.body);
+    let purchase = JSON.parse(req.body.checkout);
+
+    purchase = this.orderPurchaseObj(purchase);
+    helpers.requestMid.request({
+      req: req,
+      res: res,
+      url: `${config.checkoutApi}/purchases`,
+      jsonParams: purchase,
+      cb: (apiError, apiRes, apiBody) => {
+        console.log('======================================');
+        console.log(apiRes.statusCode);
+        console.log('======================================');
+        console.log(apiRes.apiBody);
+      }
+    })
+
+  }
+
+  orderPurchaseObj(purchase) {
+    purchase['event_id'] = purchase.event.id;
+
+    purchase.items.forEach((ticket) => {
+      delete ticket.unitPrice;
+      delete ticket.amountPrice;
+    });
+
+    delete purchase.total;
+    delete purchase.event;
+
+    return purchase;
   }
 }
 

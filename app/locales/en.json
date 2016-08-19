@@ -65,6 +65,19 @@
 			"unitPrice": "Unit price",
 			"amountPrice": "Amount price",
 			"total": "Total"
+		},
+		"checkoutForm": {
+			"personalData": "Personal data",
+			"creditCardData": "Credit card data",
+			"fullName": "Full name",
+			"birthDate": "Birth date",
+			"phone": "Phone",
+			"cpf": "CPF",
+			"checkout": "Checkout",
+			"cardNumber": "Card number",
+			"cardCvc": "CVC",
+			"cardExpMonth": "Expiration month",
+			"cardExpYear": "Expiration year"
 		}
 	}
 }

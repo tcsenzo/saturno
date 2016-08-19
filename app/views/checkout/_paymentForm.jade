@@ -1,0 +1,46 @@
+div.payment-form-container
+  form(action="#" method="POST").payment-form
+    input(type="hidden" name="checkout" value="#{JSON.stringify(checkout)}")
+    
+    label= t('checkout.checkoutForm.personalData')    
+    div.form-group
+      div.row 
+        div.col-md-12
+          label(for="fullName")= t('checkout.checkoutForm.fullName')
+          input(type="text" name="fullName").form-control
+      div.row
+        div.col-md-6
+          label(for="birthDate")= t('checkout.checkoutForm.birthDate')
+          input(type="text" name="birthDate").form-control
+        div.col-md-6
+          label(for="phone")= t('checkout.checkoutForm.phone')
+          input(type="text" name="phone").form-control
+      div.row
+        div.col-md-12
+          label(for="cpf")= t('checkout.checkoutForm.cpf')
+          input(type="text" name="cpf").form-control
+    
+    label= t('checkout.checkoutForm.creditCardData')
+    div.form-group
+      div.row 
+        div.col-md-12
+          label(for="cardNumber")= t('checkout.checkoutForm.cardNumber')
+          input(type="text" name="cardNumber").form-control
+      div.row
+        div.col-md-12
+          label(for="cardCvc")= t('checkout.checkoutForm.cardCvc')
+          input(type="text" name="cardCvc").form-control
+      div.row
+        div.col-md-6
+          label(for="cardExpMonth")= t('checkout.checkoutForm.cardExpMonth')
+          input(type="text" name="cardExpMonth").form-control
+        div.col-md-6
+          label(for="cardExpYear")= t('checkout.checkoutForm.cardExpYear')
+          input(type="text" name="cpf").form-control
+      
+    div.form-group
+      div.row
+        div.col-md-12
+          button(type="submit").btn.btn-default.btn-checkout
+            i.fa.fa-check
+            | #{t('checkout.checkoutForm.checkout')}

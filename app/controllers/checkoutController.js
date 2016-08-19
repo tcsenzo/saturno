@@ -31,9 +31,13 @@ class CheckoutController {
 
       totalValue += amountPrice;
     }
-    
+
     checkoutJSON.total = totalValue;
     res.render('checkout/index', {checkout: checkoutJSON});
+  }
+
+  payment(req, res) {
+    console.log(req.body);
   }
 }
 

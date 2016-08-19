@@ -13,3 +13,6 @@ block container
     section.col-md-5
       h2.title= t('checkout.paymentTitle')
       include ./_paymentForm
+
+  block prepend js-footer
+    script(type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js")

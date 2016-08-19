@@ -17,15 +17,25 @@ block container
               button(type="submit").btn.btn-default.btn-buy
                 i.fa.fa-shopping-cart
                 | #{t('event.buy')}
-          div.form-group
+                
+          div.form-group.dynamic-field.dynamic-field-template
             div.special-ticket.col-md-4
-              label(for="ticketType")= t('event.ticketType')
-              select(name="ticketType").form-control.special-ticket-field
+              label(for="ticketType[0]")= t('event.ticketType')
+              select(name="ticketType[0]").form-control.ticket-type-field
                 each option, i in config.specialTicketOptions
                   option(value=i) #{option}
             div.special-ticket.col-md-2
-              label(for="ticketAmount")= t('event.ticketAmount')
-              input(type="text" name="ticketAmount").form-control
+              label(for="ticketAmount[0]")= t('event.ticketAmount')
+              input(type="text" name="ticketAmount[0]").form-control.ticket-amount-field
+        
+            div.dynamic-field-options-container
+              div.col-md-2
+                span.btn.btn-primary.add-field
+                  i.fa.fa-plus
+                  | #{t('event.addField')}
+                span.btn.hidden.remove-field
+                  i.fa.fa-times-circle
+            
       div.event-detail-container
         span.detail.event-date= helpers.dateFormat.format(event.scheduled_date, 'dd/mm/yyyy, HH:MM')
         h2.detail.theater-name #{event.theater.name}

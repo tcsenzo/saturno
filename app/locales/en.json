@@ -53,6 +53,7 @@
 		"specialTicket": "Half price",
 		"ticketType": "Ticket type",
 		"ticketAmount": "Amount",
-		"buy": "Buy the e-ticket"
+		"buy": "Buy the e-ticket",
+		"addField": "Add"
 	}
 }

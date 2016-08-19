@@ -1,0 +1,18 @@
+table.checkout-items-table.table.table-responsive.table-striped
+  thead
+    tr
+      td= t('checkout.itemsTable.quantity')
+      td= t('checkout.itemsTable.item')
+      td= t('checkout.itemsTable.unitPrice')
+      td= t('checkout.itemsTable.amountPrice')
+  tbody
+    each ticket in checkout.items
+      tr
+        td #{ticket.quantity}
+        td #{ticket.type}
+        td= helpers.numeral.real(ticket.unitPrice)
+        td= helpers.numeral.real(ticket.amountPrice)
+    
+    tr.info
+      td(colspan="3")= t('checkout.itemsTable.total')
+      td= helpers.numeral.real(checkout.total)

@@ -1,6 +1,6 @@
 let config = {
   theaterEventsApi: "http://localhost:8080",
-  specialTicketOptions: ['Normal ticket', 'Student ticket']
+  specialTicketOptions: [{'value':'FULL', 'name':'Normal ticket'}, {'value':'HALF', 'name':'Half ticket'}]
 }
 
 module.exports = config;

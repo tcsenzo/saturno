@@ -55,5 +55,16 @@
 		"ticketAmount": "Amount",
 		"buy": "Buy the e-ticket",
 		"addField": "Add"
+	},
+	"checkout": {
+		"reviewTitle": "Review your order",
+		"paymentTitle": "Payment",
+		"itemsTable": {
+			"quantity": "Quantity",
+			"item": "Ticket type",
+			"unitPrice": "Unit price",
+			"amountPrice": "Amount price",
+			"total": "Total"
+		}
 	}
 }

@@ -1,0 +1,14 @@
+extends /base
+
+block container
+  if alert
+    include /shared/alert
+  
+  div.row
+    section.col-md-7
+      h2.title= t('checkout.reviewTitle')
+      div.event-name #{checkout.event.name}
+      include ./_itemsTable
+      
+    section.col-md-5
+      h2.title= t('checkout.paymentTitle')

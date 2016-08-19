@@ -11,7 +11,8 @@ block container
       div.event-price-container
         div: span.old-price= t('event.from') + helpers.numeral.real(event.price)
         div: span.price= t('event.to') + helpers.numeral.real(event.price)
-        form(action="#").buy-ticket-form.form-horizontal
+        form(action="/pagamento").buy-ticket-form.form-horizontal
+          input(type="hidden" name="event" value="#{JSON.stringify(event)}")
           div.form-group
             div.buy-ticket-container.col-md-12
               button(type="submit").btn.btn-default.btn-buy
@@ -23,7 +24,7 @@ block container
               label(for="ticketType[0]")= t('event.ticketType')
               select(name="ticketType[0]").form-control.ticket-type-field
                 each option, i in config.specialTicketOptions
-                  option(value=i) #{option}
+                  option(value="#{option.value}") #{option.name}
             div.special-ticket.col-md-2
               label(for="ticketAmount[0]")= t('event.ticketAmount')
               input(type="text" name="ticketAmount[0]").form-control.ticket-amount-field

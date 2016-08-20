@@ -1,3 +1,5 @@
 form
   input(type="text" placeholder=t("search-form.placeholder")).search-input
-  input(type="submit" value=t("search-form.button")).btn.primary
+  button(type="submit").btn.btn-primary
+    i.fa.fa-search
+    | #{t("search-form.button")}

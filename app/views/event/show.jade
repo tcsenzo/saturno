@@ -3,51 +3,58 @@ extends /base
 block container
   if alert
     include /shared/alert
-  div.row
-    div.col-md-5: div.event-image
-      img(src="http://placekitten.com/g/450/300").image
-    div.col-md-7
-      h1.title.event-name #{event.name}
-      div.event-price-container
-        div: span.old-price= t('event.from') + helpers.numeral.real(event.price)
-        div: span.price= t('event.to') + helpers.numeral.real(event.price)
-        form(action="/pagamento").buy-ticket-form.form-horizontal
-          input(type="hidden" name="event" value="#{JSON.stringify(event)}")
-          div.form-group
-            div.buy-ticket-container.col-md-12
-              button(type="submit").btn.btn-primary
-                i.fa.fa-shopping-cart
-                | #{t('event.buy')}
-                
-          div.form-group.dynamic-field.dynamic-field-template
-            div.special-ticket.col-md-4
-              label(for="ticketType[0]")= t('event.ticketType')
-              select(name="ticketType[0]").form-control.ticket-type-field
+    
+  div.col-md-5: div.event-image
+    img(src="http://placekitten.com/g/450/300").image
+    div.container
+      div.row
+        div.col-md-5
+          div.event-description-container
+            div.description-title= t('event.description')
+            div.description: p #{event.description}
+          
+  div.col-md-7
+    h1.title.event-name #{event.name}
+    div.event-detail-container
+      span.detail.event-date= helpers.dateFormat.format(event.scheduled_date, 'dd/mm/yyyy, HH:MM')
+      h2.detail.theater-name #{event.theater.name}
+      h2.detail.theater-address 
+        a(href="#")
+          | #{event.theater.address.street + ', ' + event.theater.address.number}
+          i.fa.fa-map-marker.map-icon
+    div.event-price-container
+      div: span.old-price= t('event.from') + helpers.numeral.real(event.price)
+      div: span.price= t('event.to') + helpers.numeral.real(event.price)
+      form(action="/pagamento").buy-ticket-form.form-horizontal
+        input(type="hidden" name="event" value="#{JSON.stringify(event)}")
+        div.form-group
+          div.buy-ticket-container.col-md-12
+            button(type="submit").btn.btn-primary
+              i.fa.fa-shopping-cart
+              | #{t('event.buy')}
+              
+        div.form-group.dynamic-field.dynamic-field-template
+          div.special-ticket.ticket-type.col-md-12
+            div.inline-field-container
+              label= t('event.ticketType')
+              div.custom-radio-container
                 each option, i in config.specialTicketOptions
-                  option(value="#{option.value}") #{option.name}
-            div.special-ticket.col-md-2
+                  if i === 0
+                    input(type="radio" name="ticketType[0]" value="#{option.value}" id="ticketType[#{option.value + i}]" checked="true").ticket-type-radio
+                    label(for="ticketType[#{option.value + i}]").input-type-label #{option.name}
+                  else
+                    input(type="radio" name="ticketType[0]" value="#{option.value}" id="ticketType[#{option.value + i}]").ticket-type-radio
+                    label(for="ticketType[#{option.value + i}]").input-type-label #{option.name}
+                    
+            div.inline-field-container
               label(for="ticketAmount[0]")= t('event.ticketAmount')
-              input(type="text" name="ticketAmount[0]").form-control.ticket-amount-field
-        
-            div.dynamic-field-options-container
-              div.col-md-2
+              div
+                input(type="text" name="ticketAmount[0]" value="1").form-control.ticket-amount-field
+            
+            div.inline-field-container
+              div.dynamic-field-options-container
                 span.btn.add-field
                   i.fa.fa-plus
                   | #{t('event.addField')}
                 span.btn.hidden.remove-field
                   i.fa.fa-times-circle
-            
-      div.event-detail-container
-        span.detail.event-date= helpers.dateFormat.format(event.scheduled_date, 'dd/mm/yyyy, HH:MM')
-        h2.detail.theater-name #{event.theater.name}
-        h2.detail.theater-address 
-          a(href="#")
-            | #{event.theater.address.street + ', ' + event.theater.address.number}
-            i.fa.fa-map-marker.map-icon
-  div.row
-    div.col-md-12
-      div.event-description-container
-        div.description-title= t('event.description')
-        div.description: p #{event.description}
-        
-      

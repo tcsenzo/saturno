@@ -27,16 +27,20 @@ class DynamicFields {
     clone.find('.add-field').
           addClass('hidden');
 
-    clone.find('.ticket-type-field :nth-child(1)').
-          prop('selected', true);
+    clone.find('.ticket-type-radio:first').
+          attr('checked', true);
 
-    clone.find('.ticket-type-field').
-          attr('name', `ticketType[${that.ticketOptionIndex}]`).
-          siblings('label').
-          attr('for', `ticketType[${that.ticketOptionIndex}]`);
+    clone.find('.ticket-type-radio').each((i, el) => {
+      $(el).attr('name', `ticketType[${that.ticketOptionIndex}]`).
+            attr('id', `ticketType[${that.ticketOptionIndex}][clone${i}]`);
+    });
+
+    clone.find('.ticket-type-radio + label').each((i, el) => {
+      $(el).attr('for', `ticketType[${that.ticketOptionIndex}][clone${i}]`);
+    });
 
     clone.find('.ticket-amount-field').
-          val('').
+          val('1').
           attr('name', `ticketAmount[${that.ticketOptionIndex}]`).
           siblings('label').
           attr('for', `ticketAmount[${that.ticketOptionIndex}]`);

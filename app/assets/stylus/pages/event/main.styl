@@ -7,12 +7,37 @@
 
 .buy-ticket-form
   margin: 20px 0 40px 0
+  .inline-field-container
+    display: inline-block
+    margin-right: 20px
   .form-group
     margin-right: 40px
 
+  .ticket-type
+    input[type="radio"]
+      display: none
+      &:checked + label
+        color: #fff
+        background-color: #3276b1
+    .custom-radio-container .input-type-label
+      background-color: #fff
+      color: #3276b1
+      padding: 6px 15px
+      margin: 0
+      border 1px solid #3276b1
+      font-weight: normal
+      &:hover
+        cursor: pointer
+      &:first-child
+        border-radius: 2px 0 0 2px
+      &:last-child
+        border-radius: 0 2px 2px 0
+
+  .ticket-amount-field
+    width: 50px
+    display: inline-block
+
   .dynamic-field-options-container
-    .btn
-      margin-top: 25px;
     .remove-field
       color: #b90000;
     .add-field
@@ -22,14 +47,18 @@
   .old-price
     text-decoration: line-through
     color: _medium_grey
+    font-size: 0.9em
   .price
     color: secondary-color
     font-weight: bold
+    font-size: 1.4em
 
-.detail
-  margin: 5px 0
-  .map-icon
-    margin-left: 10px
+.event-detail-container
+  font-size: 1em
+  .detail
+    margin: 5px 0
+    .map-icon
+      margin-left: 10px
 
 .event-date
   margin-top: 10px

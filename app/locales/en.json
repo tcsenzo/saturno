@@ -1,82 +1,82 @@
 {
 	"menu": {
-		"profile": "Profile",
-		"purchasesHistoy": "Purchases history",
-		"close": "Close"
+		"profile": "Meu perfil",
+		"purchasesHistoy": "Histórico de compras",
+		"close": "Fechar"
 	},
 	"header": {
-		"login": "Login",
-		"signup": "Sign up",
-		"logout": "Logout"
+		"login": "Entrar",
+		"signup": "Cadastrar",
+		"logout": "Sair"
 	},
 	"search-form": {
-		"placeholder": "Search for events, places or theaters",
-		"button": "Search"
+		"placeholder": "Procure por eventos, lugares ou teatros",
+		"button": "Buscar"
 	},
-	"fiveHours": "Events in the next 5h",
-	"eightHours": "Events in the next 8h",
-	"twelveHours": "Events in the next 12h",
+	"fiveHours": "Eventos nas próximas 5h",
+	"eightHours": "Eventos nas próximas 8h",
+	"twelveHours": "Eventos nas próximas 12h",
 	"signup": {
-		"signup": "Create your new awesome account",
-		"socialLogin": "Sign up with your social media",
-		"formLogin": "Input your data",
-		"name": "Name",
+		"signup": "Crie sua conta",
+		"socialLogin": "Cadastre-se com seu facebook",
+		"formLogin": "Insira seus dados",
+		"name": "Nome",
 		"email": "E-mail",
-		"password": "Password",
-		"saveButton": "Sign up!",
-		"serviceTerms": "By sign up with us, you agree with our <a href='#'>Terms of Service</a>",
+		"password": "Senha",
+		"saveButton": "Cadastrar",
+		"serviceTerms": "Cadastrando, você concorda com nossos <a href='#'>Termos de serviço</a>",
 		"message": {
-			"title": "Success!",
-			"content": "User created successfully."
+			"title": "Pronto!",
+			"content": "Usuário criado com sucesso."
 		}
 	},
 	"login": {
-		"login": "Login to your account",
-		"socialLogin": "Login with your social media",
-		"formLogin": "Input your data",
+		"login": "Entre com sua conta",
+		"socialLogin": "Entre pelo seu facebook",
+		"formLogin": "Insira seus dados",
 		"email": "E-mail",
-		"password": "Password",
-		"saveButton": "Login!",
+		"password": "Senha",
+		"saveButton": "Entrar",
 		"message": {
-			"title": "Invalid data!",
-			"content": "The email or password are invalid."
+			"title": "Dados inválidos!",
+			"content": "O e-mail ou senha não foram encontrados"
 		}
 	},
 	"profile": {
-		"profile": "Welcome to your profile"
+		"profile": "Bem vindo ao seu perfil"
 	},
 	"event": {
-		"description": "Description",
-		"from": "form: ",
-		"to": "to: ",
-		"specialTicket": "Half price",
-		"ticketType": "Ticket type",
-		"ticketAmount": "Amount",
-		"buy": "Buy the e-ticket",
-		"addField": "Add"
+		"description": "Descrição",
+		"from": "de: ",
+		"to": "por: ",
+		"specialTicket": "Meia entrada",
+		"ticketType": "Tipo do ingresso",
+		"ticketAmount": "Quantidade",
+		"buy": "Comprar o ingresso",
+		"addField": "Adicionar"
 	},
 	"checkout": {
-		"reviewTitle": "Review your order",
-		"paymentTitle": "Payment",
+		"reviewTitle": "Confirme seu pedido",
+		"paymentTitle": "Pagamento",
 		"itemsTable": {
-			"quantity": "Quantity",
-			"item": "Ticket type",
-			"unitPrice": "Unit price",
-			"amountPrice": "Amount price",
+			"quantity": "Quantidade",
+			"item": "Tipo do ingresso",
+			"unitPrice": "Preço unitário",
+			"amountPrice": "Subtotal",
 			"total": "Total"
 		},
 		"checkoutForm": {
-			"personalData": "Personal data",
-			"creditCardData": "Credit card data",
-			"fullName": "Full name",
-			"birthDate": "Birth date",
-			"phone": "Phone",
+			"personalData": "Dados pessoais",
+			"creditCardData": "Dados do cartão de crédito",
+			"fullName": "Nome completo",
+			"birthDate": "Data de nascimento",
+			"phone": "Telefone ou celular",
 			"cpf": "CPF",
-			"checkout": "Checkout",
-			"cardNumber": "Card number",
+			"checkout": "Confirmar",
+			"cardNumber": "Número do cartão",
 			"cardCvc": "CVC",
-			"cardExpMonth": "Expiration month",
-			"cardExpYear": "Expiration year"
+			"cardExpMonth": "Mês de expiração",
+			"cardExpYear": "Ano de expiração"
 		}
 	}
 }

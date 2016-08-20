@@ -6,8 +6,10 @@
   font-weight: bold
 
 .checkout-items-table
-  tr:last-child td
+  tbody > tr:last-child td
     font-weight: bold
+  thead td
+    font-weight: normal
 
 .payment-form-container
   padding: 20px
@@ -23,9 +25,14 @@
       display: block
       border-bottom: 1px solid _medium_grey
       margin-bottom: 15px
+      font-weight: bold
     > .form-group
       margin-bottom: 25px
-    > .form-group:last-child
-      margin-bottom: 0
+    > .form-group
+        label
+          font-weight: normal
+        &:last-child
+          margin-bottom: 0
+
   .row:last-child
     margin-bottom: 0

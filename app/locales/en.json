@@ -1,13 +1,12 @@
 {
 	"menu": {
-		"home": "Menu 1",
-		"home2": "Menu 2",
-		"home3": "Menu 3",
+		"profile": "Profile",
+		"purchasesHistoy": "Purchases history",
 		"close": "Close"
 	},
 	"header": {
 		"login": "Login",
-		"signin": "Sign in",
+		"signup": "Sign up",
 		"logout": "Logout"
 	},
 	"search-form": {

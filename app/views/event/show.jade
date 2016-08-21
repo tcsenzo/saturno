@@ -23,7 +23,7 @@ block container
           | #{event.theater.address.street + ', ' + event.theater.address.number}
           i.fa.fa-map-marker.map-icon
     div.event-price-container
-      div: span.old-price= t('event.from') + helpers.numeral.real(event.price)
+      div: span.old-price= t('event.from') + helpers.numeral.real(event.original_price)
       div: span.price= t('event.to') + helpers.numeral.real(event.price)
       form(action="/pagamento").buy-ticket-form.form-horizontal
         input(type="hidden" name="event" value="#{JSON.stringify(event)}")

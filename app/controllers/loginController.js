@@ -11,7 +11,7 @@ class LoginController {
 
   login(req, res) {
     helpers.requestMid.request({
-      url: `${config.theaterEventsApi}/login?email=${req.body.email}&password=${req.body.password}`,
+      url: `${config.authApi}/login?email=${req.body.email}&password=${req.body.password}`,
       method: 'POST',
       req: req,
       res: res,

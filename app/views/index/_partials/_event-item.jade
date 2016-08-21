@@ -3,5 +3,5 @@ div.col-md-2: a(href="/evento/#{e.id}").event-link: li.event-item
   div.event-contents
     span.event-title #{e.name}
     span.date= helpers.dateFormat.format(e.scheduled_date, "dd/mm/yyyy, HH:MM")
-    span.old-price= helpers.numeral.real(e.price)
+    span.old-price= helpers.numeral.real(e.original_price)
     span.price= helpers.numeral.real(e.price)

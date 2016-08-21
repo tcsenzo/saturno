@@ -10,7 +10,7 @@ class SignUpController {
 
   create(req, res) {
     helpers.requestMid.request({
-      url: `${config.theaterEventsApi}/users`,
+      url: `${config.authApi}/users`,
       method: 'POST',
       jsonParams: req.body,
       req: req,

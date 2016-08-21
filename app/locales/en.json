@@ -78,5 +78,10 @@
 			"cardExpMonth": "Mês de expiração",
 			"cardExpYear": "Ano de expiração"
 		}
+	},
+	"success": {
+		"title": "Tudo certo!",
+		"checkYourEmail": "O ingresso foi enviado para o seu e-mail, você deve mostra-lo para entrar no evento",
+		"haveFun": "Divirta-se!"
 	}
 }

@@ -17,6 +17,7 @@ class Router {
 		app.get('/evento/:id', (req, res, next) => controllers.eventController.show(req, res));
 
 		app.get('/pagamento', helpers.auth.authorize, (req, res, next) => controllers.checkoutController.index(req, res));
+		app.get('/pagamento/wip', helpers.auth.authorize, (req, res, next) => controllers.checkoutController.wip(req, res));
 		app.post('/pagamento', helpers.auth.authorize, (req, res, next) => controllers.checkoutController.checkout(req, res));
 	}
 }

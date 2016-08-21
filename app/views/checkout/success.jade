@@ -1,0 +1,16 @@
+extends /base
+
+block container
+  if alert
+    include /shared/alert
+  
+  section.centered-box.col-md-6.col-md-offset-3
+    h1.title.success-title= t('success.title')
+    div.content
+      div.highlight-icons
+        i.fa.fa-ticket
+        i.fa.fa-arrow-right
+        i.fa.fa-envelope
+      p= t('success.checkYourEmail')
+      p
+        b= t('success.haveFun')

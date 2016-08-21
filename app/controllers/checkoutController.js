@@ -83,10 +83,14 @@ class CheckoutController {
       jsonParams: payment,
       cb: (apiError, apiRes, apiBody) => {
         if(apiRes.statusCode === 200) {
-          res.render('checkout/success' {'purchaseId': purchaseId});
+          res.render('checkout/success', {'purchaseId': purchaseId});
         }
       }
     });
+  }
+
+  wip(req, res) {
+    res.render('checkout/success', {'purchaseId': 123});
   }
 
   orderPurchaseObj(purchase) {

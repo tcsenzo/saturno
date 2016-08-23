@@ -64,7 +64,8 @@ class App {
 							viewName: view.split('/')[0],
 							session: req.session,
 							loggedUser: (reqCookie.JSESSIONID ? true : false),
-							config: config
+							config: config,
+							loggeddUsername: reqCookie['qettalLoggedUser']
 						};
 
 				options = options || {};

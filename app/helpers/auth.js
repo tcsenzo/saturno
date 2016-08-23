@@ -1,14 +1,22 @@
-let cookie = require('cookie');
+let cookie = require('cookie'),
+    requestMid = require('./requestMid'),
+    config = require('../config');
 
 class Auth {
   authorize(req, res, next) {
-    let reqCookie = cookie.parse(req.headers.cookie);
-    if(reqCookie.JSESSIONID) {
-      next();
-    }
-    else {
-      res.redirect('/acesso-negado');
-    }
+    requestMid.request({
+      req: req,
+      res: res,
+      url: `${config.authApi}/users`,
+      cb: (apiError, apiRes, apiBody) => {
+        if(apiRes.statusCode === 200 || apiRes.statusCode === 201) {
+          next();
+        }
+        else {
+          res.redirect('/login');
+        }
+      }
+    });
   }
 }
 

@@ -23,7 +23,6 @@ class CcValidator {
           pubKey: that.ccFields.publicKey.val()
         });
 
-    debugger
     if(cc.isValid()){
       that.ccFields.hash.val(cc.hash());
       $(this).submit();

@@ -19,6 +19,8 @@ class Router {
 		app.get('/pagamento', helpers.auth.authorize, (req, res, next) => controllers.checkoutController.index(req, res));
 		app.get('/pagamento/wip', helpers.auth.authorize, (req, res, next) => controllers.checkoutController.wip(req, res));
 		app.post('/pagamento', helpers.auth.authorize, (req, res, next) => controllers.checkoutController.checkout(req, res));
+
+		app.get('/ticket/:hash', helpers.auth.authorize, (req, res, next) => controllers.ticketController.show(req, res));
 	}
 }
 

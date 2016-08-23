@@ -6,7 +6,7 @@ class CheckoutController {
     let ticketSum = {},
         totalValue = 0,
         checkoutJSON = {
-          'event': JSON.parse(req.query.event),
+          'event': JSON.parse(unescape(req.query.event).replace('+', ' ')),
           'items': [],
           'total': totalValue
         };

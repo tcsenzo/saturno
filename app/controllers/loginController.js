@@ -6,8 +6,8 @@ let helpers = require('../helpers'),
 
 class LoginController {
 
-  index(res) {
-    res.render('login/index');
+  index(req, res) {
+    res.render('login/index', {posLogin: req.query.posLogin});
   }
 
   login(req, res) {
@@ -47,7 +47,13 @@ class LoginController {
           let loggedUser = JSON.parse(apiBody);
           req.headers.cookie += '; qettalLoggedUser=' + loggedUser.name;
           res.cookie('qettalLoggedUser', loggedUser.name);
-          res.redirect('/perfil');
+
+          if(req.body.posLogin) {
+            res.redirect(decodeURIComponent(unescape(req.body.posLogin)));
+          }
+          else {
+            res.redirect('/perfil');
+          }
         }
         else {
           res.render('login/index', {

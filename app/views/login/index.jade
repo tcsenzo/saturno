@@ -9,6 +9,8 @@ block container
     div.row: div.login-sections-container
       div.col-md-12: div.form-login-container
         div.form-container: form(action="/login" method="POST" role="form")
+          if posLogin
+            input(type="hidden", name="posLogin", value="#{posLogin}")
           div.form-group
             label(for="email")= t("login.email")
             input(type="text" name="email" placeholder=t("login.email")).form-control

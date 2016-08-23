@@ -65,7 +65,7 @@ class App {
 							session: req.session,
 							loggedUser: (reqCookie.JSESSIONID ? true : false),
 							config: config,
-							loggeddUsername: reqCookie['qettalLoggedUser']
+							cookies: reqCookie
 						};
 
 				options = options || {};

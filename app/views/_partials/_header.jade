@@ -7,7 +7,7 @@ nav.menu-user
   ul.inline-list
     if loggedUser
       li.list-item
-        a(href="/perfil") #{loggeddUsername}
+        a(href="/perfil") #{cookies.qettalLoggedUser}
       li.list-item
         form(method="POST" action="/logout")
           button(type="submit").logout-button= t("header.logout")

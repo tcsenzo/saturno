@@ -84,6 +84,9 @@
 		"checkYourEmail": "O ingresso foi enviado para o seu e-mail, você deve mostra-lo para entrar no evento",
 		"haveFun": "Divirta-se!"
 	},
+	"history": {
+		"title": "Histórico de compras"
+	},
 	"purchase": {
 		"title": "Detalhe da compra"
 	}

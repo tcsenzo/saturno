@@ -5,5 +5,8 @@ block container
     if alert
       include /shared/alert
     h1.title= t('history.title')
+    form(action="/ticket").show-tickets-form.hidden
+      input(type="hidden" name="showTicketsJSON" value="")
     each purchase in history
       include ./_partials/_purchase-item
+  

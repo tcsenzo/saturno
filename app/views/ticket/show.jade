@@ -4,4 +4,5 @@ block container
   if alert
     include /shared/alert
     
-  div #{ticket.user.name}
+  div #{JSON.stringify(ticket)}
+  img(src="#{ticket.tickets[0].qrcode_url}")

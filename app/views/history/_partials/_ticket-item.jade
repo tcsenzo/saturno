@@ -2,4 +2,4 @@ tr
   td #{ticket.type}
   td= helpers.numeral.real(ticket.paid_price)
   td
-    a(href="#")= t('history.itemsTable.showTicket')
+    a(href="/ticket" data-tickets-json="#{JSON.stringify(ticket)}").show-tickets-btn= t('history.itemsTable.showTicket')

@@ -87,7 +87,7 @@
 	"history": {
 		"title": "Histórico de compras",
 		"paymentNotConfirmed": "O pagamento dessa compra ainda não foi confirmado.",
-		"ticketsListTitle": "Ingressos",
+		"ticketsListTitle": "Valor total <span class=\"value\">{{valor}}</span>",
 		"seeAllQrCodes": "Ver todos os QrCodes",
 		"printAll": "Imprimir todos",
 		"itemsTable": {

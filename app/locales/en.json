@@ -83,5 +83,8 @@
 		"title": "Tudo certo!",
 		"checkYourEmail": "O ingresso foi enviado para o seu e-mail, você deve mostra-lo para entrar no evento",
 		"haveFun": "Divirta-se!"
+	},
+	"purchase": {
+		"title": "Detalhe da compra"
 	}
 }

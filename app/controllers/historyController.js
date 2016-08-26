@@ -5,7 +5,14 @@ let services = require('../services'),
 class HistoryController {
 
   index(req, res) {
-    res.render("history/index");
+    helpers.requestMid.request({
+      req: req,
+      res: res,
+      url: `${config.checkoutApi}/history`,
+      cb: (apiError, apiRes, apiBody) => {
+        res.render("history/index", {'history': JSON.parse(apiBody)});
+      }
+    });
   }
 }
 

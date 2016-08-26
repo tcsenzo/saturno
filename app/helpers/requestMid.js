@@ -7,7 +7,7 @@ class RequestMid {
     let requestOptions = {
       'url': options.url,
       'headers': {},
-      'method': options.method
+      'method': options.method || 'GET'
     }
 
     if(options.req.headers.cookie) {

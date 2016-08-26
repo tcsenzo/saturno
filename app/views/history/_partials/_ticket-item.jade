@@ -1,0 +1,5 @@
+tr
+  td #{ticket.type}
+  td= helpers.numeral.real(ticket.paid_price)
+  td
+    a(href="#")= t('history.itemsTable.showTicket')

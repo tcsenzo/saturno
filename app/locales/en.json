@@ -85,7 +85,18 @@
 		"haveFun": "Divirta-se!"
 	},
 	"history": {
-		"title": "Histórico de compras"
+		"title": "Histórico de compras",
+		"paymentNotConfirmed": "O pagamento dessa compra ainda não foi confirmado.",
+		"ticketsListTitle": "Ingressos",
+		"seeAllQrCodes": "Ver todos os QrCodes",
+		"printAll": "Imprimir todos",
+		"itemsTable": {
+			"ticketType": "Tipo",
+			"ticketPrice": "Preço",
+			"options": "Opções",
+			"showTicket": "Mostrar ingresso"
+		},
+		"showAll": "Mostrar todos"
 	},
 	"purchase": {
 		"title": "Detalhe da compra"

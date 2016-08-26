@@ -1,8 +1,9 @@
 extends /base
 
 block container
-  div.row: div.col-md-8.col-md-offset-2: section.login-container
+  div.row: div.col-md-12: section.history-container
     if alert
       include /shared/alert
-      
     h1.title= t('history.title')
+    each purchase in history
+      include ./_partials/_purchase-item

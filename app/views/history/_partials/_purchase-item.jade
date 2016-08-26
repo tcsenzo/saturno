@@ -1,12 +1,14 @@
-if purchase.tickets.length > 0
-  div.row.purchase-item.confirmed
-    div.col-md-3.event-image
-      img(src="http://placehold.it/250x150")
-    div.col-md-5
-      div
-        h2.subtitle #{purchase.event.name}
-      div
-        span= helpers.dateFormat.format(purchase.event.scheduled_date, 'dd/mm/yyyy, HH:MM')
+div.row.purchase-item
+  if purchase.tickets.length === 0
+    div.col-md-12: div.alert.alert-warning: strong= t('history.paymentNotConfirmed')
+  div.col-md-3.event-image
+    img(src="http://placehold.it/250x150")
+  div.col-md-5
+    div
+      h2.subtitle #{purchase.event.name}
+    div
+      span= helpers.dateFormat.format(purchase.event.scheduled_date, 'dd/mm/yyyy, HH:MM')
+  if purchase.tickets.length > 0
     div.col-md-4.event-tickets
       h2.subtitle= t('history.ticketsListTitle')
       table.history-tickets-table.table.table-responsive.table-striped
@@ -21,6 +23,3 @@ if purchase.tickets.length > 0
           tr
             td(colspan="3")
               button.btn.btn-primary= t('history.showAll')
-else
-  div.row.purchase-item.unconfirmed
-    div.col-md-12= t('history.paymentNotConfirmed')

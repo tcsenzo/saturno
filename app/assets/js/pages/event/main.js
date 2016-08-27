@@ -1,10 +1,7 @@
-import Main from '../../main';
-import DynamicFields from './dynamicFields';
+var DynamicFields = require('./dynamicFields');
 
-class Event {
-  constructor() {
-    new DynamicFields();
-  }
+function Event() {
+  new DynamicFields();
 }
 
 new Event();

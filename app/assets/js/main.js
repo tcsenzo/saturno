@@ -1,15 +1,15 @@
-import sideMenu from './sideMenu';
+var SideMenu = require('./sideMenu');
 
-class Main {
-  constructor() {
-    this.documentReady();
-  }
-
-  documentReady() {
-    $(document).ready(() => {
-      new sideMenu();
-    });
-  }
+function Main(){
+  this.binds();
 }
 
-export default new Main();
+Main.prototype.binds = function () {
+  $(document).on('ready', this.onDocumentReady);
+};
+
+Main.prototype.onDocumentReady = function (e) {
+  new SideMenu();
+};
+
+new Main();

@@ -1,10 +1,7 @@
-import Main from '../../main';
-import CcValidator from './ccValidator';
+var CcValidator = require('./ccValidator');
 
-class Checkout {
-  constructor() {
-    new CcValidator();
-  }
+function Checkout() {
+  new CcValidator();
 }
 
 new Checkout();

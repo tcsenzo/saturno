@@ -1,36 +1,40 @@
-class CcValidator {
-  constructor() {
-    let $paymentForm = $('.payment-form');
-    this.ccFields = {
-      number: $paymentForm.find('.card-number'),
-      cvc: $paymentForm.find('.card-cvc'),
-      expMonth: $paymentForm.find('.card-exp-month'),
-      expYear: $paymentForm.find('.card-exp-year'),
-      hash: $paymentForm.find('.card-hash'),
-      publicKey: $paymentForm.find('.pub-key')
-    }
+function CcValidator() {
+  this.$paymentForm = $('.payment-form');
 
-    $paymentForm.on('submit', {that: this}, this.onFormSubmit);
+  this.ccFields = {
+    number: this.$paymentForm.find('.card-number'),
+    cvc: this.$paymentForm.find('.card-cvc'),
+    expMonth: this.$paymentForm.find('.card-exp-month'),
+    expYear: this.$paymentForm.find('.card-exp-year'),
+    hash: this.$paymentForm.find('.card-hash'),
+    publicKey: this.$paymentForm.find('.pub-key')
   }
 
-  onFormSubmit(e) {
-    let that = e.data.that,
-        cc = new Moip.CreditCard({
-          number: that.ccFields.number.val(),
-          cvc: that.ccFields.cvc.val(),
-          expMonth: that.ccFields.expMonth.val(),
-          expYear: that.ccFields.expYear.val(),
-          pubKey: that.ccFields.publicKey.val()
-        });
+  this.binds();
+};
 
-    if(cc.isValid()){
-      that.ccFields.hash.val(cc.hash());
-      $(this).submit();
-    }
-    else {
-      alert('Cartão de crédito inválido');
-    }
+CcValidator.prototype.binds = function () {
+  this.$paymentForm.on('submit', {that: this}, this.onFormSubmit);
+};
+
+CcValidator.prototype.onFormSubmit = function(e) {
+  e.preventDefault();
+  var that = e.data.that,
+      cc = new Moip.CreditCard({
+        number: that.ccFields.number.val(),
+        cvc: that.ccFields.cvc.val(),
+        expMonth: that.ccFields.expMonth.val(),
+        expYear: that.ccFields.expYear.val(),
+        pubKey: that.ccFields.publicKey.val()
+      });
+
+  if(cc.isValid()){
+    that.ccFields.hash.val(cc.hash());
+    $(this).submit();
   }
-}
+  else {
+    alert('Cartão de crédito inválido');
+  }
+};
 
 module.exports = CcValidator;

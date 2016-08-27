@@ -1,2 +1,7 @@
-import Main from '../../main';
-import MenuScroll from './menuScroll';
+var MenuScroll = require('./menuScroll');
+
+function Index() {
+  new MenuScroll();
+}
+
+new Index();

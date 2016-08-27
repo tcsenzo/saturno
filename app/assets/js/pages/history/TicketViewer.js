@@ -1,31 +1,29 @@
-class TicketViewer {
-  constructor() {
-    this.$container = $('.history-container .purchased-item');
-    this.eventJSON = this.$container.data('event-json');
-    this.$showTicketsForm = $('.show-tickets-form');
-    this.binds();
-  }
+function TicketViewer() {
+  this.$container = $('.history-container .purchased-item');
+  this.eventJSON = this.$container.data('event-json');
+  this.$showTicketsForm = $('.show-tickets-form');
+  this.binds();
+}
 
-  binds() {
-    this.$container.find('.show-tickets-btn').on('click', {that: this}, this.onShowTickets);
-  }
+TicketViewer.prototype.binds = function() {
+  this.$container.find('.show-tickets-btn').on('click', {that: this}, this.onShowTickets);
+}
 
-  onShowTickets(e) {
-    e.preventDefault();
-    let that = e.data.that,
-        tickets = $(this).data('tickets-json'),
-        showTicketsJSON = {
-          'event': that.eventJSON,
-          'tickets': $.isArray(tickets) ? tickets : [tickets] 
-        };
+TicketViewer.prototype.onShowTickets = function(e) {
+  e.preventDefault();
+  var that = e.data.that,
+      tickets = $(this).data('tickets-json'),
+      showTicketsJSON = {
+        'event': that.eventJSON,
+        'tickets': $.isArray(tickets) ? tickets : [tickets]
+      };
 
-    if(typeof showTicketsJSON.tickets)
+  if(typeof showTicketsJSON.tickets)
 
-    that.$showTicketsForm.find('input[name=showTicketsJSON]').
-      val(encodeURIComponent(JSON.stringify(showTicketsJSON)));
+  that.$showTicketsForm.find('input[name=showTicketsJSON]').
+    val(encodeURIComponent(JSON.stringify(showTicketsJSON)));
 
-    that.$showTicketsForm.submit();
-  }
+  that.$showTicketsForm.submit();
 }
 
 module.exports = TicketViewer;

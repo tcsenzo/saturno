@@ -1,10 +1,7 @@
-import Main from '../../main';
-import TicketViewer from './TicketViewer';
+var TicketViewer = require('./TicketViewer');
 
-class History {
-  constructor() {
-    new TicketViewer();
-  }
+function History() {
+  new TicketViewer();
 }
 
 new History();

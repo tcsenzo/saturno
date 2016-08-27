@@ -1,13 +1,10 @@
 module.exports = {
   dist: {
-    options: {
-      "transform": [ ["babelify", { "presets": ["es2015"] }] ]
-    },
     files: [{
       "expand": true,
-      "cwd": "app/assets/js/pages/",
-      "src": ["**/main.js"],
-      "dest": "app/assets/dist/js/pages/",
+      "cwd": "app/assets/js/",
+      "src": ["main.js", "pages/checkout/main.js"],
+      "dest": "app/assets/dist/js/",
       "ext": ".js"
     }]
   }

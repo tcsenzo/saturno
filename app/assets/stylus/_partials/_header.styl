@@ -1,3 +1,13 @@
+.logo
+  font-family: ptSans
+  margin: 5px 0 0 30px
+  logo-style()
+  a
+    color: header-font-color
+    &:hover
+      cursor: pointer
+      text-decoration: none
+
 .header
   default-transition(0.4s)
   display: block
@@ -7,15 +17,6 @@
   position: fixed
   top: 0
   z-index: 10
-  .logo
-    font-family: ptSans
-    margin: 5px 0 0 30px
-    logo-style()
-    a
-      color: header-font-color
-      &:hover
-        cursor: pointer
-        text-decoration: none
   .menu-user
     float: right
     margin-top: 10px

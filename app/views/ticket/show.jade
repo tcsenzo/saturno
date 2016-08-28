@@ -1,8 +1,35 @@
 extends /base
 
+block header
+  - // limpa o header
+  
 block container
   if alert
     include /shared/alert
     
   div #{JSON.stringify(ticket)}
-  img(src="#{ticket.tickets[0].qrcode_url}")
+  div.tickets-header
+    div.logo
+      span !{t('ticket.title')}
+  
+  div.event-info
+    span
+      div
+        b #{t('ticket.event')}
+        | #{ticket.event.name}
+      div
+        b #{t('ticket.date')}
+        | #{helpers.dateFormat.format(ticket.event.scheduled_date, 'dd/mm/yyyy, HH:MM')}
+        
+  div.tickets-container.row
+    each t in ticket.tickets
+      div.col-md-6
+        div.ticket-container
+          div.row
+            div.col-md-6
+              div 
+                span 
+                  b #{t('ticket.ticketType')}
+                  | #{t.type}
+            div.col-md-6
+              img(src="#{t.qrcode_url}")

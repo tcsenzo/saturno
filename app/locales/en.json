@@ -98,7 +98,9 @@
 		},
 		"showAll": "Mostrar todos"
 	},
-	"purchase": {
-		"title": "Detalhe da compra"
+	"ticket": {
+		"title": "<b>Qettal</b> Ingresso",
+		"event": "Evento: ",
+		"date": "Data: "
 	}
 }

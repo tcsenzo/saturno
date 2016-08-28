@@ -7,7 +7,6 @@ class ViewHelpers {
   }
 
   assetExists(path) {
-    debugger
     return fs.existsSync(`${__dirname}/../assets/dist/${path}`);
   }
 }

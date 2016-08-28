@@ -3,4 +3,9 @@ link(href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700"  rel="sty
 link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
 link(rel="stylesheet" href="/assets/bower_components/bootstrap/dist/css/bootstrap.min.css")
 link(rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico")
-link(rel="stylesheet" href="/assets/css/pages/" + viewName + "/main.css")
+
+if helpers.viewHelpers.assetExists("js/pages/" + viewName + "/main.js")
+  link(rel="stylesheet" href="/assets/css/pages/" + viewName + "/main.css")
+else
+  link(rel="stylesheet" href="/assets/css/main.css")
+  script(src="/assets/js/main.js")

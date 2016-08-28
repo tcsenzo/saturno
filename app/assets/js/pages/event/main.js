@@ -1,4 +1,5 @@
-var DynamicFields = require('./dynamicFields');
+var Main = require('../../main'),
+    DynamicFields = require('./dynamicFields');
 
 function Event() {
   new DynamicFields();

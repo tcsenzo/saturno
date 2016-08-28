@@ -1,23 +1,13 @@
 module.exports = {
-    compile: {
-      options: {
-        use: [
-          require('rupture'),
-          //require('senzo-stylus-components')
-        ],
-        paths: [
-          "node_modules/rupture",
-          //"node_modules/senzo-stylus-components"
-        ]
-      },
-      files: [
-        {
-          'expand': true,
-          'cwd': 'app/assets/stylus/pages/',
-          'src': '**/main.styl',
-          'dest': 'app/assets/dist/css/pages/',
-          'ext': '.css'
-        }
-      ]
-    }
+  compile: {
+    files: [
+      {
+        'expand': true,
+        'cwd': 'app/assets/stylus/',
+        'src': '**/main.styl',
+        'dest': 'app/assets/dist/css/',
+        'ext': '.css'
+      }
+    ]
+  }
 }

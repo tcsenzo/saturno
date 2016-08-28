@@ -7,7 +7,6 @@ block container
   if alert
     include /shared/alert
     
-  div #{JSON.stringify(ticket)}
   div.tickets-header
     div.logo
       span !{t('ticket.title')}
@@ -22,7 +21,7 @@ block container
         | #{helpers.dateFormat.format(ticket.event.scheduled_date, 'dd/mm/yyyy, HH:MM')}
         
   div.tickets-container.row
-    each t in ticket.tickets
+    each ti in ticket.tickets
       div.col-md-6
         div.ticket-container
           div.row
@@ -30,6 +29,6 @@ block container
               div 
                 span 
                   b #{t('ticket.ticketType')}
-                  | #{t.type}
+                  | #{ti.type}
             div.col-md-6
-              img(src="#{t.qrcode_url}")
+              img(src="#{ti.qrcode_url}")

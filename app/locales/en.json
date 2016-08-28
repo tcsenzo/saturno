@@ -101,6 +101,7 @@
 	"ticket": {
 		"title": "<b>Qettal</b> Ingresso",
 		"event": "Evento: ",
-		"date": "Data: "
+		"date": "Data: ",
+		"ticketType": "Tipo do ingresso: "
 	}
 }

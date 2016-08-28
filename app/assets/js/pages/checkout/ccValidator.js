@@ -18,7 +18,6 @@ CcValidator.prototype.binds = function () {
 };
 
 CcValidator.prototype.onFormSubmit = function(e) {
-  e.preventDefault();
   var that = e.data.that,
       cc = new Moip.CreditCard({
         number: that.ccFields.number.val(),
@@ -30,9 +29,11 @@ CcValidator.prototype.onFormSubmit = function(e) {
 
   if(cc.isValid()){
     that.ccFields.hash.val(cc.hash());
-    $(this).submit();
+    debugger
+    $(this)[0].submit();
   }
   else {
+    e.preventDefault();
     alert('Cartão de crédito inválido');
   }
 };

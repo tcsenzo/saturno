@@ -1,5 +1,6 @@
 let helpers = require('../helpers'),
-    config = require('../config');
+    config = require('../config'),
+    moment = require('moment');
 
 class CheckoutController {
   index(req, res) {
@@ -40,6 +41,7 @@ class CheckoutController {
   }
 
   checkout(req, res) {
+    this.formDataUglify(req);
     this.createPurchase(req, res);
   }
 
@@ -69,7 +71,7 @@ class CheckoutController {
           "credit_card_hash": req.body.cardHash,
           "full_name": req.body.fullName,
           "birth_date": req.body.birthDate,
-          "phone_area_code": "11",
+          "phone_area_code": req.body.phoneArea,
           "phone": req.body.phone,
           "cpf": req.body.cpf,
           "purchase_id": purchaseId
@@ -87,6 +89,15 @@ class CheckoutController {
         }
       }
     });
+  }
+
+  formDataUglify(req) {
+    var cleanPhone = req.body.phone.replace(/\D/g, '');
+
+    req.body.birthDate = moment(req.body.birthDate, 'DD/MM/YYYY').format('YYYY-MM-DD');
+    req.body.phoneArea = cleanPhone.substring(2, 0);
+    req.body.phone = cleanPhone.substring(2);
+    req.body.cpf = req.body.cpf.replace(/\.|\-/g, '');
   }
 
   wip(req, res) {

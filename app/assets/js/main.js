@@ -1,3 +1,6 @@
+window.$ = require('jquery');
+require('jquery-mask-plugin');
+
 var SideMenu = require('./sideMenu');
 
 function Main(){

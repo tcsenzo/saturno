@@ -29,7 +29,6 @@ CcValidator.prototype.onFormSubmit = function(e) {
 
   if(cc.isValid()){
     that.ccFields.hash.val(cc.hash());
-    debugger
     $(this)[0].submit();
   }
   else {

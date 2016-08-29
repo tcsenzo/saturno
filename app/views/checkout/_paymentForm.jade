@@ -13,14 +13,14 @@ div.payment-form-container
       div.row
         div.col-md-6
           label(for="birthDate")= t('checkout.checkoutForm.birthDate')
-          input(type="text" name="birthDate").form-control
+          input(type="text" name="birthDate" data-mask="00/00/0000").form-control
         div.col-md-6
           label(for="phone")= t('checkout.checkoutForm.phone')
-          input(type="text" name="phone").form-control
+          input(type="text" name="phone" data-mask="(00) 00000-0000").form-control
       div.row
         div.col-md-12
           label(for="cpf")= t('checkout.checkoutForm.cpf')
-          input(type="text" name="cpf").form-control
+          input(type="text" name="cpf" data-mask="000.000.000-00").form-control
     
     label= t('checkout.checkoutForm.creditCardData')
     div.form-group

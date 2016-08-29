@@ -9,7 +9,7 @@ table.checkout-items-table.table.table-responsive.table-striped
     each ticket in checkout.items
       tr
         td #{ticket.quantity}
-        td #{ticket.type}
+        td #{ticket.ticket_type}
         td= helpers.numeral.real(ticket.unitPrice)
         td= helpers.numeral.real(ticket.amountPrice)
     

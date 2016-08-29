@@ -10,6 +10,7 @@ class HistoryController {
       res: res,
       url: `${config.checkoutApi}/history`,
       cb: (apiError, apiRes, apiBody) => {
+        debugger;
         res.render("history/index", {'history': JSON.parse(apiBody)});
       }
     });

@@ -17,7 +17,7 @@ block container
             input(type="text" name="email" placeholder=t("signup.email")).form-control
           div.form-group
             label(for="password")= t("signup.password")
-            input(type="text" name="password" placeholder=t("signup.password")).form-control
+            input(type="password" name="password" placeholder=t("signup.password")).form-control
           button(type="submit").btn.btn-default= t("signup.saveButton")
     //- html safe
     div.service-terms: span !{t("signup.serviceTerms")}

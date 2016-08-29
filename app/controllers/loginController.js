@@ -52,7 +52,7 @@ class LoginController {
             res.redirect(decodeURIComponent(unescape(req.body.posLogin)));
           }
           else {
-            res.redirect('/perfil');
+            res.redirect('/');
           }
         }
         else {

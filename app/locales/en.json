@@ -90,6 +90,8 @@
 		"ticketsListTitle": "Valor total <span class=\"value\">{{valor}}</span>",
 		"seeAllQrCodes": "Ver todos os QrCodes",
 		"printAll": "Imprimir todos",
+		"purchaseDate": "Data da compra: ",
+		"eventDate": "Data do evento: ",
 		"itemsTable": {
 			"ticketType": "Tipo",
 			"ticketPrice": "Preço",

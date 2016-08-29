@@ -28,6 +28,7 @@
     "i18n": "^0.8.1",
     "jade": "^1.11.0",
     "jeet": "^6.1.2",
+    "jquery-mask-plugin": "github:igorescobar/jQuery-Mask-Plugin",
     "load-grunt-config": "^0.19.1",
     "load-grunt-tasks": "^3.4.1",
     "morgan": "^1.7.0",

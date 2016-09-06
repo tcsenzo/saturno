@@ -1,37 +1,24 @@
 let services = require(`../services`),
-    _ = require(`underscore`);
+    config = require(`../config`),
+    helpers = require('../helpers');
 
 class Index {
 
-  index(res) {
-    let filters = {},
-        finished = {},
-        that = this;
+  index(req, res) {
+    let that = this;
 
-    finished = _.after(3, () => {
-      that.doRender(res, filters);
-    });
-
-    services.event.all((error, response, body) => {
-      filters.fiveHours = JSON.parse(body).events;
-      finished();
-    });
-
-    services.event.all((error, response, body) => {
-      filters.eightHours = JSON.parse(body).events;
-      finished();
-    });
-
-    services.event.all((error, response, body) => {
-      filters.twelveHours = JSON.parse(body).events;
-      finished();
+    helpers.requestMid.request({
+      req: req,
+      res: res,
+      url: `${config.theaterEventsApi}/events`,
+      cb: (apiError, apiRes, apiBody) => {
+        if(apiRes.statusCode === 200) {
+          let events = apiBody === '' ? {} : JSON.parse(apiBody).events;
+          res.render("index/index", { "events": events });
+        }
+      }
     });
   }
-
-  doRender(res, filters) {
-    res.render("index/index", { "filters": filters });
-  }
-
 }
 
 module.exports = new Index();

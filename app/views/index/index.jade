@@ -7,10 +7,10 @@ block before-container
 
 block container
 
-  each events, filterName in filters
-    div.row.events-list-container
-      h2.events-list-title.subtitle= t(filterName)
-      ul.events-list
 
-        each e in events
-          include ./_partials/_event-item 
+  div.row.events-list-container
+    h2.events-list-title.subtitle= Eventos
+    ul.events-list
+
+    each e in events
+      include ./_partials/_event-item 

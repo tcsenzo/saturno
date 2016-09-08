@@ -8,10 +8,10 @@ function Main(){
 }
 
 Main.prototype.binds = function () {
-  $(document).on('ready', this.onDocumentReady);
+  $(document).ready(this.onDocumentReady);
 };
 
-Main.prototype.onDocumentReady = function (e) {
+Main.prototype.onDocumentReady = function () {
   new SideMenu();
 };
 

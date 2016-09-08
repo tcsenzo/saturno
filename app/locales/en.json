@@ -1,4 +1,8 @@
 {
+	"ticketTypes": {
+		"FULL": "Inteira",
+		"HALF": "Meia"
+	},
 	"menu": {
 		"profile": "Meu perfil",
 		"purchasesHistoy": "Histórico de compras",

@@ -11,7 +11,14 @@
 docker pull leocwolter/saturno
 ```
 
-- Run the checkout container linked with the mysql instance:
+- Stop and remove the running container
+
+```
+docker stop saturno
+docker rm saturno
+```
+
+- Run the container:
 
 ```bash
 docker run --name saturno -p 8080:4000 -d leocwolter/saturno

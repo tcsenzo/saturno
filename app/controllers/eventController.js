@@ -1,5 +1,4 @@
-let services = require('../services'),
-    config = require('../config'),
+let config = require('../config'),
     helpers = require('../helpers');
 
 class EventController {

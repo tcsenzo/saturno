@@ -1,5 +1,3 @@
-let services = require('../services');
-
 class ProfileController {
 
   index(req, res) {

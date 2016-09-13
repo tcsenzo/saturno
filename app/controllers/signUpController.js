@@ -1,5 +1,4 @@
-let services = require('../services'),
-    helpers = require('../helpers'),
+let helpers = require('../helpers'),
     config = require(`../config`);
 
 class SignUpController {

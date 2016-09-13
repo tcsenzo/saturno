@@ -1,5 +1,3 @@
-//let //services = require('../services'),
-    //cookie = require('cookie'),
 let helpers = require('../helpers'),
     config = require(`../config`),
     cookie = require('cookie');

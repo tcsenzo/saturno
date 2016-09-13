@@ -8,8 +8,9 @@ function SideMenu() {
 SideMenu.prototype.binds = function() {
   var that = this;
 
-  $(`.menu-toggle`).on(`click`, {that: this}, this.onOpenMenu);
-  $('.side-menu .close-side-menu').on('click', {that: this}, this.onCloseMenu);
+  $('.menu-toggle').on('click', {that: this}, this.onOpenMenu);
+  $('.side-menu .close-side-menu, .overlay').on('click', {that: this}, this.onCloseMenu);
+  $(document).on('keyup', {that: this}, this.onKeyup);
 };
 
 SideMenu.prototype.onOpenMenu = function (e) {
@@ -24,6 +25,14 @@ SideMenu.prototype.onCloseMenu = function (e) {
 
   that.helpers.hideSideMenu();
   that.helpers.hideOverlay();
+};
+
+SideMenu.prototype.onKeyup = function (e) {
+  var that = e.data.that;
+
+  if (e.keyCode === 27) {
+    that.onCloseMenu(e);
+  }
 };
 
 module.exports = SideMenu;

@@ -6,7 +6,15 @@ div.menu-header
 div.menu-body
   nav.main-menu
     ul.menu-list
-      li.menu-item
-        a(href="#")= t('menu.profile')
-      li.menu-item
-        a(href="#")= t('menu.purchasesHistoy')
+      if loggedUser
+        li.menu-item
+          a(href="/perfil")= t('menu.profile')
+        li.menu-item
+          a(href="/historico")= t('menu.purchasesHistoy')
+        li.menu-item
+          a(href="/logout")= t('menu.logout')
+      else
+        li.menu-item
+          a(href="/cadastro")= t('menu.signup')
+        li.menu-item
+          a(href="/login")= t('menu.login')

@@ -6,7 +6,10 @@
 	"menu": {
 		"profile": "Meu perfil",
 		"purchasesHistoy": "Histórico de compras",
-		"close": "Fechar"
+		"close": "Fechar",
+		"signup": "Cadastrar",
+		"login": "Entrar",
+		"logout": "Sair"
 	},
 	"header": {
 		"login": "Entrar",

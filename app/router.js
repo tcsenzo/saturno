@@ -11,6 +11,7 @@ class Router {
 		app.get('/login', (req, res) => controllers.loginController.index(req, res));
 		app.post('/login', (req, res) => controllers.loginController.login(req, res));
 		app.post('/logout', (req, res) => controllers.loginController.logout(req, res));
+		app.get('/logout', (req, res) => controllers.loginController.logout(req, res));
 
 		app.get('/perfil', helpers.auth.authorize, (req, res, next) => controllers.profileController.index(req, res));
 

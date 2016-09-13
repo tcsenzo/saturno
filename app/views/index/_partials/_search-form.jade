@@ -1,5 +1,8 @@
 form
-  input(type="text" placeholder=t("search-form.placeholder")).search-input
-  button(type="submit").btn.btn-default
-    i.fa.fa-search
-    | #{t("search-form.button")}
+  div.search-input-container
+    input(type="text" placeholder=t("search-form.placeholder")).search-input
+    span.search-icon.visible-xs
+      i.fa.fa-search
+    button(type="submit").btn.btn-default.hidden-xs
+      i.fa.fa-search
+      | #{t("search-form.button")}

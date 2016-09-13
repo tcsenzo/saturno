@@ -17,7 +17,7 @@
 		"logout": "Sair"
 	},
 	"search-form": {
-		"placeholder": "Procure por eventos, lugares ou teatros",
+		"placeholder": "Faça sua busca",
 		"button": "Buscar"
 	},
 	"fiveHours": "Eventos nas próximas 5h",

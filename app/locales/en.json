@@ -66,9 +66,9 @@
 		"reviewTitle": "Confirme seu pedido",
 		"paymentTitle": "Pagamento",
 		"itemsTable": {
-			"quantity": "Quantidade",
-			"item": "Tipo do ingresso",
-			"unitPrice": "Preço unitário",
+			"quantity": "Qtd",
+			"item": "Tipo",
+			"unitPrice": "Preço",
 			"amountPrice": "Subtotal",
 			"total": "Total"
 		},

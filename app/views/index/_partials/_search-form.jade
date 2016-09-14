@@ -1,6 +1,6 @@
-form
+form(action="/busca")
   div.search-input-container
-    input(type="text" placeholder=t("search-form.placeholder")).search-input
+    input(type="text" name="q" placeholder=t("search-form.placeholder")).search-input
     button(type="submit").search-icon.visible-xs
       i.fa.fa-search
     button(type="submit").btn.btn-default.hidden-xs

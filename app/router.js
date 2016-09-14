@@ -13,6 +13,8 @@ class Router {
 		app.post('/logout', (req, res) => controllers.loginController.logout(req, res));
 		app.get('/logout', (req, res) => controllers.loginController.logout(req, res));
 
+		app.get('/busca', (req, res) => controllers.searchController.index(req, res));
+
 		app.get('/perfil', helpers.auth.authorize, (req, res, next) => controllers.profileController.index(req, res));
 
 		app.get('/evento/:id', (req, res, next) => controllers.eventController.show(req, res));

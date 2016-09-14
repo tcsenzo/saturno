@@ -3,7 +3,7 @@ div.row.purchased-item(data-event-json="#{JSON.stringify(purchase.event)}")
     div.col-md-12: div.alert.alert-warning: strong= t('history.paymentNotConfirmed')
   div.col-md-3.event-image
     img(src="http://placehold.it/250x150")
-  div.col-md-5
+  div.col-md-5.event-data
     div
       h2.subtitle #{purchase.event.name}
     div

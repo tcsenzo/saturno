@@ -11,7 +11,7 @@ MenuScroll.prototype.onPageScroll = function(e) {
   var $window = $(window),
       that = e.data.that;
 
-  if($window.scrollTop() >= 50) {
+  if($window.scrollTop() >= 30) {
     that.$header.addClass(`background`);
     that.$header.find('.background-animation').css({"height": "100%"})
   }

@@ -40,7 +40,7 @@
   margin: 6px 0
 
 .events-list-container
-  margin: 20px 0
+  margin: 20px 0 40px 0
 
   .events-list
     padding-left: 0
@@ -48,18 +48,41 @@
   .events-list-title
     margin: 0 0 10px 15px
 
-  .event-link:hover
-    text-decoration: none
+  .event-link
+    display: block
+    &:hover
+      text-decoration: none
+
+  .slider-container
+    position: relative
+    margin: 0 15px
+
+    .bx-controls
+      position: absolute
+      top: 39%
+      width: 100%
+
+      .bx-next, .bx-prev
+        position: absolute
+        background-image: url('/assets/images/arrow.png')
+        background-size: cover
+        background-repeat: no-repeat
+        width: 20px
+        height: 36px
+      .bx-next
+        right: -26px
+        transform: rotate(180deg)
+      .bx-prev
+        left: -26px
+
 
   .event-item
     border: 1px solid _medium_grey
     back-box-shadow()
     default-transition()
-    &:hover
-      transform: scale(1.05,1.05)
     .image
       width: 100%
-      height: 94px
+      height: 150px
       display: block
     .event-contents
       background-color: #fff
@@ -85,4 +108,4 @@
       color: secondary-color
       font-size: 1.2em
 
-@require './_search-form-smartphone'
+@require './_smartphone'

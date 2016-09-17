@@ -1,8 +1,12 @@
 var Main = require('../../main'),
-    MenuScroll = require('./menuScroll');
+    MenuScroll = require('./menuScroll'),
+    Slider = require('./slider');
 
 function Index() {
-  new MenuScroll();
+  $(document).ready(function() {
+    new MenuScroll();
+    new Slider();
+  });
 }
 
 new Index();

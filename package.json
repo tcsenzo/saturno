@@ -15,6 +15,7 @@
     "body-parser": "^1.15.2",
     "bower": "^1.7.7",
     "browserify": "^13.0.0",
+    "bxslider": "git+https://github.com/stevenwanderski/bxslider-4.git",
     "cookie": "^0.3.1",
     "cookie-parser": "^1.4.3",
     "dateformat": "^1.0.12",

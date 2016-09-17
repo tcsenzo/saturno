@@ -9,8 +9,27 @@ block container
 
 
   div.row.events-list-container
-    h2.events-list-title.subtitle= Eventos
+    h2.events-list-title.subtitle= "Destaques"
     ul.events-list
 
-    each e in events
-      include ./_partials/_event-item 
+      each e in events
+        include ./_partials/_event-item
+  
+  div.row.events-list-container
+    h2.events-list-title.subtitle= "Recomendados"
+    ul.events-list
+
+      each e in events
+        include ./_partials/_event-item
+  
+  div.row.events-list-container
+    h2.events-list-title.subtitle= "Recentes"
+    ul.events-list
+    
+      each e in events
+        include ./_partials/_event-item
+      
+
+      
+block append css
+  link(rel="stylesheet" href="/assets/bower_components/bxslider-4/dist/jquery.bxslider.min.css")

@@ -2,7 +2,7 @@ div.slide-item: a(href="/evento/#{e.id}").event-link: li.event-item
   div.image-container
     img(src="http://placehold.it/255x150").image
   div.event-contents
-    span.event-title #{e.name}
-    span.date= helpers.dateFormat.format(e.scheduled_date, "dd/mm/yyyy, HH:MM")
-    span.old-price= helpers.numeral.real(e.original_price)
-    span.price= helpers.numeral.real(e.price)
+    div.event-title #{e.name}
+    div.date= helpers.dateFormat.format(e.scheduled_date, "dd/mm/yyyy, HH:MM")
+    div.old-price= helpers.numeral.real(e.original_price)
+    div.price= helpers.numeral.real(e.price)

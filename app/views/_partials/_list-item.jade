@@ -1,0 +1,9 @@
+div.col-md-3.col-sm-4.col-xs-12: a(href="/evento/#{event.id}").event-link: li.event-item
+  div.image-container
+    img(src="http://placehold.it/255x150").image
+  div.event-contents
+    div.event-title #{event.name}
+    div.theater #{event.theater.name}
+    div.date= helpers.dateFormat.format(event.scheduled_date, "dd/mm/yyyy, HH:MM")
+    div.old-price= helpers.numeral.real(event.original_price)
+    div.price= helpers.numeral.real(event.price)

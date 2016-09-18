@@ -10,21 +10,21 @@ block container
 
   div.row.events-list-container
     h2.events-list-title.subtitle= "Destaques"
-    ul.events-list
+    ul.events-list-highlights
 
       each e in events
         include ./_partials/_event-item
   
   div.row.events-list-container
     h2.events-list-title.subtitle= "Recomendados"
-    ul.events-list
+    ul.events-list-recommended
 
       each e in events
         include ./_partials/_event-item
   
   div.row.events-list-container
     h2.events-list-title.subtitle= "Recentes"
-    ul.events-list
+    ul.events-list-latest   
     
       each e in events
         include ./_partials/_event-item

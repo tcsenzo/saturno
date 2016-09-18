@@ -1,7 +1,7 @@
 require('bxslider/dist/jquery.bxslider.min.js');
 
 function Slider() {
-  $('.events-list').bxSlider({
+  $('.events-list-highlights, .events-list-recommended, .events-list-latest').bxSlider({
     'pager': false,
     'slideWidth': 255,
     'minSlides': 1,

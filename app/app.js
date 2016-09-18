@@ -65,7 +65,8 @@ class App {
 							session: req.session,
 							loggedUser: (reqCookie.JSESSIONID ? true : false),
 							config: config,
-							cookies: reqCookie
+							cookies: reqCookie,
+							req: req
 						};
 
 				options = options || {};

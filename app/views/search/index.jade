@@ -1,4 +1,4 @@
 extends /list-base
 
 block page-title
-  - var pageTitle = 'Resultados da busca'
+  - var pageTitle = t('search.title', {'q': req.query.q})

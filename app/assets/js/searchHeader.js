@@ -30,7 +30,7 @@ SearchHeader.prototype.hideSearchForm = function (e) {
   that.$header.find('.search-header').hide();
   that.$header.find('.default-header').fadeIn();
 
-  if($(window).scrollTop() <= 50) {
+  if($(window).scrollTop() <= 50 && location.pathname === '/') {
     that.$header.removeClass('background');
     that.$header.find('.background-animation').css({'height': '0'})
   }

@@ -12,12 +12,12 @@ MenuScroll.prototype.onPageScroll = function(e) {
       that = e.data.that;
 
   if($window.scrollTop() >= 30) {
-    that.$header.addClass(`background`);
+    that.$header.addClass('background');
     that.$header.find('.background-animation').css({"height": "100%"})
   }
   else {
     if($window.scrollTop() <= 50) {
-      that.$header.removeClass(`background`);
+      that.$header.removeClass('background');
       that.$header.find('.background-animation').css({"height": "0"})
     }
   }

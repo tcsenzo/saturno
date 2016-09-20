@@ -1,6 +1,6 @@
 function Helpers() {
-  this.$overlay = $(`.overlay`);
-  this.$sideMenu = $(`.side-menu`);
+  this.$overlay = $('.overlay');
+  this.$sideMenu = $('.side-menu');
 }
 
 Helpers.prototype.showOverlay = function() {
@@ -12,11 +12,11 @@ Helpers.prototype.hideOverlay = function() {
 }
 
 Helpers.prototype.showSideMenu = function() {
-  this.$sideMenu.css(`left`, 0);
+  this.$sideMenu.css('left', 0);
 }
 
 Helpers.prototype.hideSideMenu = function() {
-  this.$sideMenu.css(`left`, `-310px`);
+  this.$sideMenu.css('left', '-310px');
 }
 
 module.exports = Helpers;

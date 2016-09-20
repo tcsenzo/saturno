@@ -4,12 +4,13 @@ function MenuScroll() {
 };
 
 MenuScroll.prototype.binds = function() {
-  $(document).on('scroll', {that: this}, this.onPageScroll);
+  $(document).on('scroll', this.onPageScroll.bind(this));
+  $(document).ready(this.onPageScroll.bind(this));
 };
 
 MenuScroll.prototype.onPageScroll = function(e) {
   var $window = $(window),
-      that = e.data.that;
+      that = this;
 
   if($window.scrollTop() >= 30) {
     if(!that.$header.hasClass('background')) {

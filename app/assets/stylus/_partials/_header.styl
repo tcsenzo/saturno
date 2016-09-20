@@ -1,6 +1,5 @@
 .logo
   font-family: logo-font
-  margin-left: 30px
   logo-style()
   a
     color: header-font-color
@@ -17,9 +16,32 @@
   position: fixed
   top: 0
   z-index: 10
+  .default-header
+    display: none
+  .search-header
+    .search-input
+      width: 100%
+  .container
+    padding: 0
+    margin: 0 auto
   .menu-user
     float: right
-    margin-top: 10px
+    .list-item
+      padding: 10px 0
+    .glow
+      padding: 0
+      a
+        padding: 10px 20px
+        border: 1px solid #BDBDBD
+        default-border-radius()
+        &:hover
+          background-color: header-font-color
+          color: main-color
+    .fa
+      margin-left: 10px
+    .separator
+      color: header-font-color
+      font-size: 1.3em
     a, .logout-button
       color: header-font-color
       background: none
@@ -29,7 +51,8 @@
       &:hover, &:active
         text-decoration: none
   &.background
-    padding: 15px 25px
+    .container
+      padding: 0 10px
   .background-animation
     background-color: main-color
     bottom-box-shadow()

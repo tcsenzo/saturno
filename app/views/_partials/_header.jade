@@ -1,19 +1,33 @@
-div.menu-toggle
-  each line in [0,1,2]
-    div.line
-div.logo
-  a(href="/")= 'Qettal'
-nav.menu-user.hidden-xs
-  ul.inline-list
-    if loggedUser
-      li.list-item
-        a(href="/perfil") #{cookies.qettalLoggedUser}
-      li.list-item
-        form(method="POST" action="/logout")
-          button(type="submit").logout-button= t("header.logout")
-    else
-      li.list-item
-        a(href="/login")= t('header.login')
-      li.list-item
-        a(href="/cadastro")= t('header.signup')
+div.container
+  div.default-header
+    div.menu-toggle.visible-xs
+      each line in [0,1,2]
+        div.line
+    div.logo
+      a(href="/")= 'Qettal'
+    nav.menu-user.hidden-xs
+      ul.inline-list
+        li.list-item
+          a(href="#")
+            | #{t('menu.search')}
+            i.fa.fa-search
+        if loggedUser
+          li.list-item.glow
+            a(href="/perfil")
+              | #{t('menu.purchasesHistoy')}
+              i.fa.fa-ticket
+          li.list-item.separator |
+          li.list-item
+            a(href="/perfil") #{cookies.qettalLoggedUser}
+          li.list-item
+            form(method="POST" action="/logout")
+              button(type="submit").logout-button= t("header.logout")
+        else
+          li.list-item
+            a(href="/login")= t('header.login')
+          li.list-item
+            a(href="/cadastro")= t('header.signup')
+  div.search-header
+    form
+      input(type="text").search-input
 div.background-animation

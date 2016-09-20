@@ -1,4 +1,4 @@
-require('bxslider/dist/jquery.bxslider.min.js');
+require('./bx-slider-jquery-3');
 
 function Slider() {
   $('.events-list-highlights, .events-list-recommended, .events-list-latest').bxSlider({

@@ -2,6 +2,7 @@ window.$ = window.jQuery = require('jquery');
 require('jquery-mask-plugin');
 
 var SideMenu = require('./sideMenu');
+var SearchHeader = require('./searchHeader');
 
 function Main(){
   this.binds();
@@ -13,6 +14,7 @@ Main.prototype.binds = function () {
 
 Main.prototype.onDocumentReady = function () {
   new SideMenu();
+  new SearchHeader();
 };
 
 new Main();

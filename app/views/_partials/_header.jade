@@ -5,9 +5,17 @@ div.container
         div.line
     div.logo
       a(href="/")= 'Qettal'
+      
+    nav.menu-user.visible-xs
+      ul.inline-list
+        li.list-item.search-btn
+          a(href="#")
+            | #{t('menu.search')}
+            i.fa.fa-search
+            
     nav.menu-user.hidden-xs
       ul.inline-list
-        li.list-item
+        li.list-item.search-btn
           a(href="#")
             | #{t('menu.search')}
             i.fa.fa-search
@@ -28,6 +36,9 @@ div.container
           li.list-item
             a(href="/cadastro")= t('header.signup')
   div.search-header
-    form
-      input(type="text").search-input
+    form(action="/busca")
+      div.search-input-container
+        input(type="text" name="q" placeholder="#{t('menu.search')}").search-input
+        button(type="submit").search-icon
+          i.fa.fa-search
 div.background-animation

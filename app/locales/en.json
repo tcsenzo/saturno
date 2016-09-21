@@ -94,7 +94,7 @@
 	},
 	"history": {
 		"title": "Histórico de compras",
-		"paymentNotConfirmed": "O pagamento dessa compra ainda não foi confirmado.",
+		"paymentNotConfirmed": "O pagamento desta compra ainda não foi confirmado.",
 		"ticketsListTitle": "Valor total <span class=\"value\">{{valor}}</span>",
 		"seeAllQrCodes": "Ver todos os QrCodes",
 		"printAll": "Imprimir todos",
@@ -107,6 +107,15 @@
 			"showTicket": "Mostrar ingresso"
 		},
 		"showAll": "Mostrar todos"
+	},
+	"purchase": {
+		"title": "Detalhe da compra",
+		"eventDate": "Data do evento: ",
+		"purchaseDate": "Data da compra: ",
+		"theater": "Teatro: ",
+		"paymentStatus": {
+			"STARTED": "O pagamento desta compra ainda não foi confirmado. Os ingressos estarão disponíveis após a confirmação."
+		}
 	},
 	"ticket": {
 		"title": "<b>Qettal</b> Ingresso",

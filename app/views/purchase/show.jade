@@ -1,8 +1,17 @@
 extends /base
 
 block container
-  div.row: div.col-md-8.col-md-offset-2: section.login-container
-    if alert
-      include /shared/alert
-      
-    h1.title= t('purchase.title')
+  section.centered-box.col-md-6.col-md-offset-3
+    h1.title.success-title= t('purchase.title')
+    div.content
+      div.alert.alert-warning #{t('purchase.paymentStatus.' + purchase.payment_status)}
+      h2.subtitle #{purchase.event.name}
+      div
+        b= t('purchase.purchaseDate')
+        | #{helpers.dateFormat.format(purchase.date, 'dd/mm/yyyy, HH:MM')}
+      div
+        b= t('purchase.eventDate')
+        | #{helpers.dateFormat.format(purchase.event.scheduled_date, 'dd/mm/yyyy, HH:MM')}
+      div
+        b= t('purchase.theater')
+        | #{purchase.event.theater.name}

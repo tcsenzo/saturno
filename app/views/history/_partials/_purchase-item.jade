@@ -10,11 +10,11 @@ div.row.purchased-item(data-event-json="#{JSON.stringify(purchase.event)}")
     div
       span
         b= t('history.purchaseDate')
-        | #{helpers.dateFormat.format(purchase.date, 'dd/mm/yyyy, HH:MM')}
+        | #{helpers.moment.systemToHuman(purchase.date)}
     div
       span
         b= t('history.eventDate')
-        | #{helpers.dateFormat.format(purchase.event.scheduled_date, 'dd/mm/yyyy, HH:MM')}
+        | #{helpers.moment.systemToHuman(purchase.event.scheduled_date)}
   div.col-md-4.event-tickets
     if purchase.tickets.length > 0
       h2.subtitle !{t("history.ticketsListTitle", {"valor": helpers.numeral.real(purchase.total_price)})}

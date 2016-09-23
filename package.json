@@ -15,7 +15,6 @@
     "bxslider": "git+https://github.com/stevenwanderski/bxslider-4.git",
     "cookie": "^0.3.1",
     "cookie-parser": "^1.4.3",
-    "dateformat": "^1.0.12",
     "express": "^4.13.4",
     "express-session": "^1.14.0",
     "grunt": "^0.4.5",

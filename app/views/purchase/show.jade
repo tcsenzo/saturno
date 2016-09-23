@@ -8,10 +8,10 @@ block container
       h2.subtitle #{purchase.event.name}
       div
         b= t('purchase.purchaseDate')
-        | #{helpers.dateFormat.format(purchase.date, 'dd/mm/yyyy, HH:MM')}
+        | #{helpers.moment.systemToHuman(purchase.date)}
       div
         b= t('purchase.eventDate')
-        | #{helpers.dateFormat.format(purchase.event.scheduled_date, 'dd/mm/yyyy, HH:MM')}
+        | #{helpers.moment.systemToHuman(purchase.event.scheduled_date)}
       div
         b= t('purchase.theater')
         | #{purchase.event.theater.name}

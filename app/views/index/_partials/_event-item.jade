@@ -3,6 +3,6 @@ div.slide-item: a(href="/evento/#{e.id}").event-link: li.event-item
     img(src="http://placehold.it/255x150").image.img-responsive
   div.event-contents
     div.event-title #{e.name}
-    div.date= helpers.dateFormat.format(e.scheduled_date, "dd/mm/yyyy, HH:MM")
+    div.date= helpers.moment.systemToHuman(e.scheduled_date)
     div.old-price= helpers.numeral.real(e.original_price)
     div.price= helpers.numeral.real(e.price)

@@ -16,7 +16,7 @@ block container
   div.col-md-7.event-data-container
     h1.title.event-name #{event.name}
     div.event-detail-container
-      span.detail.event-date= helpers.dateFormat.format(event.scheduled_date, 'dd/mm/yyyy, HH:MM')
+      span.detail.event-date= helpers.moment.systemToHuman(event.scheduled_date)
       h2.detail.theater-name #{event.theater.name}
       h2.detail.theater-address 
         a(href="#")

@@ -18,7 +18,7 @@ block container
         | #{ticket.event.name}
       div
         b #{t('ticket.date')}
-        | #{helpers.dateFormat.format(ticket.event.scheduled_date, 'dd/mm/yyyy, HH:MM')}
+        | #{helpers.moment.systemToHuman(ticket.event.scheduled_date)}
         
   div.tickets-container.row
     each ti in ticket.tickets

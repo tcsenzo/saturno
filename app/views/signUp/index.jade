@@ -18,8 +18,11 @@ block container
           div.form-group
             label(for="password")= t("signup.password")
             input(type="password" name="password" placeholder=t("signup.password")).form-control
-          button(type="submit").btn.btn-default= t("signup.saveButton")
+          div.form-group
+            button(type="submit").btn.btn-default= t("signup.saveButton")
+          div
+            span !{t("signup.login")}
     //- html safe
-    div.service-terms: span !{t("signup.serviceTerms")}
+    //- div.service-terms: span !{t("signup.serviceTerms")}
           
   

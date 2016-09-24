@@ -32,6 +32,7 @@
 		"email": "E-mail",
 		"password": "Senha",
 		"saveButton": "Cadastrar",
+		"login": "Ja tem uma conta? <a href=\"/login\">Faça o login</a>",
 		"serviceTerms": "Cadastrando, você concorda com nossos <a href='#'>Termos de serviço</a>",
 		"message": {
 			"title": "Pronto!",
@@ -45,6 +46,7 @@
 		"email": "E-mail",
 		"password": "Senha",
 		"saveButton": "Entrar",
+		"signup": "Não tem uma conta? <a href=\"/cadastro\">Cadastre-se</a>",
 		"message": {
 			"title": "Dados inválidos!",
 			"content": "O e-mail ou senha não foram encontrados"

@@ -9,7 +9,8 @@ let Router = require(`./router`),
 		session = require(`express-session`),
 		cookieParser = require(`cookie-parser`),
 		cookie = require('cookie'),
-		config = require('./config.js');
+		config = require('./config.js'),
+		useragent = require('express-useragent');
 
 class App {
 	constructor() {
@@ -66,7 +67,8 @@ class App {
 							loggedUser: (reqCookie.JSESSIONID ? true : false),
 							config: config,
 							cookies: reqCookie,
-							req: req
+							req: req,
+							ua: useragent.parse(req.headers['user-agent'])
 						};
 
 				options = options || {};

@@ -15,8 +15,9 @@ body
 			include ./_partials/_side-menu
 	section.page-wrapper
 		block header
-			header.header
-				include ./_partials/_header
+			if ua.source.indexOf('QETTAL-APP-ANDROID') < 0
+				header.header
+					include ./_partials/_header
 		
 		section.before-container
 			block before-container

@@ -5,7 +5,8 @@ function FormValidator() {
     $.validate({
       validateHiddenInputs: true,
       language: 'pt',
-      dateFormat: 'dd/mm/yyyy'
+      dateFormat: 'dd/mm/yyyy',
+      modules: 'brazil'
     });
   })
 }

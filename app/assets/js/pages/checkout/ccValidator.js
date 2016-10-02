@@ -33,8 +33,24 @@ CcValidator.prototype.onFormSubmit = function(e) {
   }
   else {
     e.preventDefault();
-    alert('Cartão de crédito inválido');
   }
 };
+
+$.formUtils.addValidator({
+    name : 'cc',
+    validatorFunction : function(value, $el, config, language, $form) {
+      var cc = new Moip.CreditCard({
+        number: $form.find('.card-number').val(),
+        cvc: $form.find('.card-cvc').val(),
+        expMonth: $form.find('.card-exp-month').val(),
+        expYear: $form.find('.card-exp-year').val(),
+        pubKey: $form.find('.pub-key').val()
+      });
+
+      return cc.isValid();
+    },
+    errorMessage : 'Cartão de crédito inválido',
+    errorMessageKey: 'badCcNumber'
+});
 
 module.exports = CcValidator;

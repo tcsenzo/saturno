@@ -13,10 +13,10 @@ block container
             input(type="hidden", name="posLogin", value="#{posLogin}")
           div.form-group
             label(for="email")= t("login.email")
-            input(type="text" name="email" placeholder=t("login.email")).form-control
+            input(type="text" name="email" data-validation="required email" placeholder=t("login.email")).form-control
           div.form-group
             label(for="password")= t("login.password")
-            input(type="password" name="password" placeholder=t("login.password")).form-control
+            input(type="password" name="password" data-validation="required" placeholder=t("login.password")).form-control
           div.form-group
             button(type="submit").btn.btn-default= t("login.saveButton")
           div

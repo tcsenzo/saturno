@@ -10,7 +10,7 @@ function DynamicFields() {
 
 DynamicFields.prototype.binds = function() {
   this.$template.find('.add-field').on('click', {that: this}, this.onAddField);
-  $('.buy-ticket-form').on('click', '.remove-field', this.onRemoveField);
+  $('.buy-ticket-form').on('click', '.remove-field', {that: this}, this.onRemoveField);
 }
 
 DynamicFields.prototype.onAddField = function(e) {
@@ -45,10 +45,14 @@ DynamicFields.prototype.onAddField = function(e) {
         attr('for', 'ticketAmount[' + that.ticketOptionIndex + ']');
 
   clone.insertAfter($('.buy-ticket-form .dynamic-field:last'));
+  $(this).hide();
 }
 
 DynamicFields.prototype.onRemoveField = function(e) {
+  var that = e.data.that;
+
   $(this).parents('.dynamic-field:first').remove();
+  that.$template.find('.add-field').show();
 }
 
 module.exports = DynamicFields;

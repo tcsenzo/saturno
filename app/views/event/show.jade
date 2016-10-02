@@ -49,7 +49,7 @@ block container
             div.inline-field-container
               label(for="ticketAmount[0]")= t('event.ticketAmount')
               div
-                input(type="text" name="ticketAmount[0]" value="1").form-control.ticket-amount-field
+                input(type="text" name="ticketAmount[0]" data-validation="required number" value="1").form-control.ticket-amount-field
             
             div.inline-field-container
               div.dynamic-field-options-container

@@ -26,7 +26,7 @@ div.container
               i.fa.fa-ticket
           li.list-item.separator |
           li.list-item
-            a(href="/perfil") #{cookies.qettalLoggedUser}
+            a(href="/") #{cookies.qettalLoggedUser}
           li.list-item
             form(method="POST" action="/logout")
               button(type="submit").logout-button= t("header.logout")

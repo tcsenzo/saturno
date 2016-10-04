@@ -2,7 +2,7 @@ div.row.purchased-item(data-event-json="#{JSON.stringify(purchase.event)}")
   if purchase.tickets.length === 0
     div.col-md-12: div.alert.alert-warning: strong= t('history.paymentNotConfirmed')
   div.col-md-3.event-image
-    img(src="http://placehold.it/250x150")
+    img(src="#{purchase.event.image}")
   div.col-md-5.event-data
     div
       a(href="/compras/#{purchase.id}")

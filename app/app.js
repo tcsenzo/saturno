@@ -42,6 +42,7 @@ class App {
     app.set(`views`, `app/views`);
     app.use(i18n.init);
 		app.use(`/assets`, express.static(`app/assets/dist`));
+		app.use(`/favicon.ico`, express.static(`app/assets/dist/images/favicon.ico`));
 		app.use(cookieParser());
 		app.locals.basedir = 'app/views';
 		app.locals.helpers = require(`./helpers`);

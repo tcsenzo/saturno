@@ -100,9 +100,6 @@ class CheckoutController {
     req.body.cpf = req.body.cpf.replace(/\.|\-/g, '');
   }
 
-  wip(req, res) {
-    res.render('checkout/success', {'purchaseId': 123});
-  }
 
   orderPurchaseObj(purchase) {
     purchase['event_id'] = purchase.event.id;

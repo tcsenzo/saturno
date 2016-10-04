@@ -1,8 +1,10 @@
 window.$ = window.jQuery = require('jquery');
 require('jquery-mask-plugin');
+require('jquery-form-validator');
 
 var SideMenu = require('./sideMenu');
 var SearchHeader = require('./searchHeader');
+var FormValidator = require('./formValidator');
 
 function Main(){
   this.binds();

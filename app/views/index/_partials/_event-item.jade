@@ -1,6 +1,6 @@
 div.slide-item: a(href="/evento/#{e.id}").event-link: li.event-item
   div.image-container
-    img(src="http://placehold.it/255x150").image.img-responsive
+    img(src="#{e.image}").image.img-responsive
   div.event-contents
     div.event-title #{e.name}
     div.date= helpers.moment.systemToHuman(e.scheduled_date)
